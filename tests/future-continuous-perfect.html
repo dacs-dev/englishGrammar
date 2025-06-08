@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Continuous & Perfect Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Test – Future Continuous, Perfect Simple & Continuous</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      { text: "By this time next week, I _____ on the beach.", options: ["will be lying", "will lie", "am going to lie", "lie"], answer: "will be lying" },
+      { text: "She _____ English for five years by the end of this term.", options: ["will have been studying", "will be studying", "is studying", "will have studied"], answer: "will have been studying" },
+      { text: "At 6 PM, we _____ dinner.", options: ["will be having", "have", "are having", "will have"], answer: "will be having" },
+      { text: "By 2026, they _____ in London for a decade.", options: ["will have been living", "will be living", "lived", "are living"], answer: "will have been living" },
+      { text: "By tomorrow morning, she _____ the whole book.", options: ["will have finished", "will finish", "finishes", "is going to finish"], answer: "will have finished" },
+      { text: "He _____ for 10 hours by the time we wake up.", options: ["will have been sleeping", "will sleep", "sleeps", "will be sleeping"], answer: "will have been sleeping" },
+      { text: "They _____ the new website before next week.", options: ["will have launched", "launch", "will launch", "are going to launch"], answer: "will have launched" },
+      { text: "I _____ to the gym at 6 PM.", options: ["will be going", "go", "am going", "have gone"], answer: "will be going" },
+      { text: "By the end of the year, she _____ 10 novels.", options: ["will have written", "writes", "is writing", "will write"], answer: "will have written" },
+      { text: "At 9 o’clock, we _____ the report.", options: ["will be discussing", "will discuss", "discuss", "have discussed"], answer: "will be discussing" },
+      { text: "They _____ the house for months before they finally sell it.", options: ["will have been renovating", "will be renovating", "renovate", "have renovated"], answer: "will have been renovating" },
+      { text: "By June, I _____ this job for three years.", options: ["will have been doing", "will do", "do", "will be doing"], answer: "will have been doing" },
+      { text: "She _____ when we arrive.", options: ["will be cooking", "cooks", "is cooking", "will cook"], answer: "will be cooking" },
+      { text: "Next month, I _____ here for ten years.", options: ["will have been working", "will be working", "work", "am working"], answer: "will have been working" },
+      { text: "At 8 PM, they _____ their homework.", options: ["will be finishing", "will have finished", "finish", "are finishing"], answer: "will be finishing" },
+      { text: "He _____ football all day by 7 PM.", options: ["will have been playing", "will be playing", "plays", "played"], answer: "will have been playing" },
+      { text: "They _____ for over 12 hours by the time the bus arrives.", options: ["will have been traveling", "travel", "will travel", "are traveling"], answer: "will have been traveling" },
+      { text: "She _____ all night before the exam.", options: ["will have been studying", "will be studying", "studies", "will study"], answer: "will have been studying" },
+      { text: "I _____ to finish the presentation at 11 AM.", options: ["will be trying", "try", "will try", "am going to try"], answer: "will be trying" },
+      { text: "By next month, we _____ 5 new employees.", options: ["will have hired", "hire", "hired", "will hire"], answer: "will have hired" },
+      { text: "They _____ the entire day cleaning.", options: ["will have spent", "spend", "are spending", "will spend"], answer: "will have spent" },
+      { text: "She _____ in her office at that time.", options: ["will be sitting", "sits", "is sitting", "sat"], answer: "will be sitting" },
+      { text: "We _____ the final version before Friday.", options: ["will have submitted", "submit", "submitted", "are submitting"], answer: "will have submitted" },
+      { text: "They _____ here for over 30 minutes by then.", options: ["will have been waiting", "wait", "waited", "will be waiting"], answer: "will have been waiting" },
+      { text: "I _____ dinner when you come.", options: ["will be eating", "eat", "am eating", "have eaten"], answer: "will be eating" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

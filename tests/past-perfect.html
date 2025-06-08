@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Past Perfect Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Test – Past Perfect</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      { text: "She _____ already left when I arrived.", options: ["had", "has", "have", "was"], answer: "had" },
+      { text: "They _____ eaten before we got there.", options: ["had", "has", "have", "are"], answer: "had" },
+      { text: "I _____ finished my homework by 8 p.m.", options: ["had", "have", "was", "did"], answer: "had" },
+      { text: "He _____ gone to bed before his parents came home.", options: ["had", "has", "have", "is"], answer: "had" },
+      { text: "We _____ never seen such a beautiful view before.", options: ["had", "has", "have", "are"], answer: "had" },
+      { text: "_____ she studied English before moving to London?", options: ["Had", "Has", "Did", "Was"], answer: "Had" },
+      { text: "I _____ not heard about the accident.", options: ["had", "has", "have", "did"], answer: "had" },
+      { text: "They _____ not met before the meeting.", options: ["had", "has", "have", "are"], answer: "had" },
+      { text: "He said he _____ never visited Spain.", options: ["had", "has", "have", "did"], answer: "had" },
+      { text: "We _____ packed everything before the movers arrived.", options: ["had", "has", "have", "did"], answer: "had" },
+      { text: "By the time she called, I _____ gone out.", options: ["had", "have", "was", "am"], answer: "had" },
+      { text: "The teacher asked if we _____ completed the task.", options: ["had", "have", "has", "did"], answer: "had" },
+      { text: "I _____ never tried sushi before last night.", options: ["had", "have", "has", "was"], answer: "had" },
+      { text: "They _____ finished the project when the manager arrived.", options: ["had", "have", "has", "were"], answer: "had" },
+      { text: "We _____ planned the trip before they invited us.", options: ["had", "have", "has", "were"], answer: "had" },
+      { text: "She _____ cleaned the house before the guests came.", options: ["had", "has", "have", "is"], answer: "had" },
+      { text: "He _____ not studied enough before the test.", options: ["had", "has", "have", "did"], answer: "had" },
+      { text: "_____ they finished dinner when you arrived?", options: ["Had", "Have", "Did", "Were"], answer: "Had" },
+      { text: "We _____ eaten all the cake by the time she arrived.", options: ["had", "have", "has", "are"], answer: "had" },
+      { text: "The film _____ already started when we got to the cinema.", options: ["had", "has", "have", "is"], answer: "had" },
+      { text: "They _____ never traveled abroad before.", options: ["had", "has", "have", "did"], answer: "had" },
+      { text: "He _____ told me the news before you did.", options: ["had", "has", "have", "did"], answer: "had" },
+      { text: "I _____ visited that museum before our trip.", options: ["had", "has", "have", "am"], answer: "had" },
+      { text: "The students _____ done their homework before class started.", options: ["had", "has", "have", "are"], answer: "had" },
+      { text: "She _____ been to the US before she moved there.", options: ["had", "has", "have", "is"], answer: "had" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

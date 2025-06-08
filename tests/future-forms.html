@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Time Test (Will & Going to)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Test – Future Time: Will & Going to</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      { text: "I think it _____ rain tomorrow.", options: ["will", "is", "going", "am"], answer: "will" },
+      { text: "Look at those clouds! It _____ rain.", options: ["is going to", "will", "goes to", "shall"], answer: "is going to" },
+      { text: "We _____ have a party next Saturday.", options: ["are going to", "will", "have", "were going to"], answer: "are going to" },
+      { text: "She _____ be late.", options: ["will", "is", "am going to", "goes to"], answer: "will" },
+      { text: "He _____ study law at university.", options: ["is going to", "will", "going to", "is"], answer: "is going to" },
+      { text: "They _____ probably arrive late.", options: ["will", "going to", "are going", "shall"], answer: "will" },
+      { text: "I _____ call you when I get home.", options: ["will", "am going", "going to", "is going to"], answer: "will" },
+      { text: "My parents _____ visit us next week.", options: ["are going to", "will", "go", "are"], answer: "are going to" },
+      { text: "I think she _____ win the competition.", options: ["will", "is going to", "can", "might"], answer: "will" },
+      { text: "Watch out! You _____ drop that!", options: ["are going to", "will", "shall", "going to"], answer: "are going to" },
+      { text: "We _____ meet them at 5 p.m.", options: ["will", "are going to", "meet", "shall"], answer: "will" },
+      { text: "I _____ start a new course next month.", options: ["am going to", "will", "is going", "shall"], answer: "am going to" },
+      { text: "He thinks it _____ snow today.", options: ["will", "is going to", "might", "can"], answer: "will" },
+      { text: "They _____ stay at a hotel during their trip.", options: ["are going to", "will", "stay", "are"], answer: "are going to" },
+      { text: "It’s very cold. I _____ close the window.", options: ["will", "am going to", "go to", "shall"], answer: "will" },
+      { text: "You _____ like this movie.", options: ["will", "are going to", "might", "can"], answer: "will" },
+      { text: "The train _____ leave in 5 minutes.", options: ["will", "is going to", "goes to", "is"], answer: "will" },
+      { text: "We _____ travel to Paris next summer.", options: ["are going to", "will", "travel", "shall"], answer: "are going to" },
+      { text: "He _____ be a great father.", options: ["will", "is going to", "can", "might"], answer: "will" },
+      { text: "They _____ have dinner with us tomorrow.", options: ["are going to", "will", "going to", "are"], answer: "are going to" },
+      { text: "I _____ help you with your homework.", options: ["will", "am going to", "shall", "can"], answer: "will" },
+      { text: "The baby _____ cry if you take her toy.", options: ["will", "is going to", "might", "does"], answer: "will" },
+      { text: "She _____ have a baby.", options: ["is going to", "will", "has", "might"], answer: "is going to" },
+      { text: "We _____ buy a new house soon.", options: ["are going to", "will", "buy", "shall"], answer: "are going to" },
+      { text: "I _____ be 18 next week.", options: ["will", "am going to", "is going", "shall"], answer: "will" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>
