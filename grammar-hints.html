@@ -8,7 +8,57 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-50 text-gray-800 font-sans text-[17px] leading-relaxed">
+
+	<nav class="bg-white shadow-md sticky top-0 z-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between h-16">
+				<div class="flex">
+					<div class="flex-shrink-0 flex items-center">
+						<span class="text-xl font-bold text-indigo-600">English Cards</span>
+					</div>
+					<div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+						<a href="tests.html"
+							class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition-all">Tests</a>
+						<a href="grammar.html"
+							class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition-all">Grammar</a>
+						<a href="irregular-verbs.html"
+							class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition-all">Irregular
+							Verbs</a>
+						<a href="grammar-hints.html"
+							class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition-all">Pistas</a>
+					</div>
+				</div>
+
+				<!-- Mobile menu button -->
+				<div class="-mr-2 flex items-center sm:hidden">
+					<button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" type="button"
+						class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none">
+						<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+							stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Menu -->
+		<div class="sm:hidden hidden" id="mobile-menu">
+			<div class="pt-2 pb-3 space-y-1">
+				<a href="tests.html"
+					class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:border-indigo-500 hover:bg-gray-50 hover:text-indigo-600">Tests</a>
+				<a href="grammar.html"
+					class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:border-indigo-500 hover:bg-gray-50 hover:text-indigo-600">Grammar</a>
+				<a href="irregular-verbs.html"
+					class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:border-indigo-500 hover:bg-gray-50 hover:text-indigo-600">Irregular
+					Verbs</a>
+				<a href="grammar-hints.html"
+					class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:border-indigo-500 hover:bg-gray-50 hover:text-indigo-600">Pistas</a>
+			</div>
+		</div>
+	</nav>
 	<div class="max-w-4xl mx-auto p-6">
 		<h1 class="text-3xl font-bold text-center text-indigo-700 mb-8">🎯 Guía práctica para identificar tiempos
 			verbales en los tests</h1>
@@ -21,135 +71,136 @@
 		<div class="space-y-6">
 			<!-- PRESENT SIMPLE -->
 			<section>
+
 				<h2 class="text-2xl font-semibold text-indigo-600">✅ Present Simple</h2>
-				<p><strong>Se usa para:</strong> hábitos, rutinas, verdades generales, horarios.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si aparecen palabras como: <em>always, usually, often, never,
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> hábitos, rutinas, verdades generales, horarios.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si aparecen palabras como: <em>always, usually, often, never,
 						sometimes, every day, on Mondays</em>.</p>
-				<p><strong>También se usa con:</strong> verbos de estado como <em>like, love, hate, know, believe,
+				<p class="text-base md:text-lg lg:text-xl"><strong>También se usa con:</strong> verbos de estado como <em>like, love, hate, know, believe,
 						need</em>.</p>
 				<ul class="list-disc pl-6">
-					<li>Water <strong>boils</strong> at 100°C.</li>
-					<li>She <strong>goes</strong> to school every day.</li>
+					<li class="text-base md:text-lg lg:text-xl">Water <strong>boils</strong> at 100°C.</li>
+					<li class="text-base md:text-lg lg:text-xl">She <strong>goes</strong> to school every day.</li>
 				</ul>
 			</section>
 
 			<!-- PRESENT CONTINUOUS -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">⏳ Present Continuous</h2>
-				<p><strong>Se usa para:</strong> acciones en curso, situaciones temporales o planes futuros cercanos.
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> acciones en curso, situaciones temporales o planes futuros cercanos.
 				</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si ves expresiones como: <em>now, at the moment, right now, this
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si ves expresiones como: <em>now, at the moment, right now, this
 						week, tonight, tomorrow</em>.</p>
-				<p><strong>Estructura:</strong> am/is/are + -ing</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> am/is/are + -ing</p>
 				<ul class="list-disc pl-6">
-					<li>She <strong>is studying</strong> now.</li>
-					<li>I <strong>am meeting</strong> them tomorrow.</li>
+					<li class="text-base md:text-lg lg:text-xl">She <strong>is studying</strong> now.</li>
+					<li class="text-base md:text-lg lg:text-xl">I <strong>am meeting</strong> them tomorrow.</li>
 				</ul>
 			</section>
 
 			<!-- PRESENT PERFECT SIMPLE -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">📌 Present Perfect Simple</h2>
-				<p><strong>Se usa para:</strong> experiencias, logros, acciones recientes con efecto en el presente.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si hay palabras como: <em>just, already, yet, ever, never, since,
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> experiencias, logros, acciones recientes con efecto en el presente.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si hay palabras como: <em>just, already, yet, ever, never, since,
 						for</em>.</p>
-				<p><strong>Estructura:</strong> have/has + participio</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> have/has + participio</p>
 				<ul class="list-disc pl-6">
-					<li>I <strong>have seen</strong> that film.</li>
-					<li>She <strong>has lived</strong> here for years.</li>
+					<li class="text-base md:text-lg lg:text-xl">I <strong>have seen</strong> that film.</li>
+					<li class="text-base md:text-lg lg:text-xl">She <strong>has lived</strong> here for years.</li>
 				</ul>
 			</section>
 
 			<!-- PRESENT PERFECT CONTINUOUS -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">🔁 Present Perfect Continuous</h2>
-				<p><strong>Se usa para:</strong> acciones que comenzaron en el pasado y continúan en el presente.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si se menciona una duración: <em>for, since, recently, all day,
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> acciones que comenzaron en el pasado y continúan en el presente.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si se menciona una duración: <em>for, since, recently, all day,
 						lately</em>.</p>
-				<p><strong>Estructura:</strong> have/has been + -ing</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> have/has been + -ing</p>
 				<ul class="list-disc pl-6">
-					<li>I <strong>have been studying</strong> all morning.</li>
+					<li class="text-base md:text-lg lg:text-xl">I <strong>have been studying</strong> all morning.</li>
 				</ul>
 			</section>
 
 			<!-- PAST SIMPLE -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">🕒 Past Simple</h2>
-				<p><strong>Se usa para:</strong> acciones completadas en el pasado.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Palabras como: <em>yesterday, last week, in 2010, ago,
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> acciones completadas en el pasado.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Palabras como: <em>yesterday, last week, in 2010, ago,
 						when...</em>.</p>
-				<p><strong>Estructura:</strong> verbo en pasado (o did + verbo base en negativa/interrogativa)</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> verbo en pasado (o did + verbo base en negativa/interrogativa)</p>
 				<ul class="list-disc pl-6">
-					<li>I <strong>watched</strong> a movie yesterday.</li>
+					<li class="text-base md:text-lg lg:text-xl">I <strong>watched</strong> a movie yesterday.</li>
 				</ul>
 			</section>
 
 			<!-- PAST CONTINUOUS -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">📽 Past Continuous</h2>
-				<p><strong>Se usa para:</strong> describir acciones en progreso en un momento pasado, o interrumpidas
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> describir acciones en progreso en un momento pasado, o interrumpidas
 					por otra.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si hay <em>while, when, at that moment</em>.</p>
-				<p><strong>Estructura:</strong> was/were + -ing</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si hay <em>while, when, at that moment</em>.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> was/were + -ing</p>
 				<ul class="list-disc pl-6">
-					<li>I <strong>was cooking</strong> when she arrived.</li>
+					<li class="text-base md:text-lg lg:text-xl">I <strong>was cooking</strong> when she arrived.</li>
 				</ul>
 			</section>
 
 			<!-- PAST PERFECT -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">🔙 Past Perfect</h2>
-				<p><strong>Se usa para:</strong> mostrar una acción anterior a otra en el pasado.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si ves: <em>by the time, already, before, after</em>.</p>
-				<p><strong>Estructura:</strong> had + participio</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> mostrar una acción anterior a otra en el pasado.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si ves: <em>by the time, already, before, after</em>.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> had + participio</p>
 				<ul class="list-disc pl-6">
-					<li>I <strong>had left</strong> when he arrived.</li>
+					<li class="text-base md:text-lg lg:text-xl">I <strong>had left</strong> when he arrived.</li>
 				</ul>
 			</section>
 
 			<!-- FUTURE WILL -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">🔮 Future: Will</h2>
-				<p><strong>Se usa para:</strong> predicciones, decisiones en el momento, promesas.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si ves palabras como: <em>probably, I think, I guess, I promise,
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> predicciones, decisiones en el momento, promesas.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si ves palabras como: <em>probably, I think, I guess, I promise,
 						I’m sure</em>.</p>
-				<p><strong>Estructura:</strong> will + verbo base</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> will + verbo base</p>
 				<ul class="list-disc pl-6">
-					<li>I <strong>will help</strong> you with that.</li>
+					<li class="text-base md:text-lg lg:text-xl">I <strong>will help</strong> you with that.</li>
 				</ul>
 			</section>
 
 			<!-- FUTURE GOING TO -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">📅 Future: Going To</h2>
-				<p><strong>Se usa para:</strong> planes ya decididos, evidencias presentes.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Palabras como: <em>Look! It's going to rain</em>, o intenciones
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> planes ya decididos, evidencias presentes.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Palabras como: <em>Look! It's going to rain</em>, o intenciones
 					claras.</p>
-				<p><strong>Estructura:</strong> am/is/are going to + verbo</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> am/is/are going to + verbo</p>
 				<ul class="list-disc pl-6">
-					<li>She <strong>is going to travel</strong> to Italy.</li>
+					<li class="text-base md:text-lg lg:text-xl">She <strong>is going to travel</strong> to Italy.</li>
 				</ul>
 			</section>
 
 			<!-- FUTURE CONTINUOUS -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">🕰 Future Continuous</h2>
-				<p><strong>Se usa para:</strong> acciones que estarán ocurriendo en un momento futuro.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si ves: <em>at 6 pm tomorrow, at this time next week</em>.</p>
-				<p><strong>Estructura:</strong> will be + -ing</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> acciones que estarán ocurriendo en un momento futuro.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si ves: <em>at 6 pm tomorrow, at this time next week</em>.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> will be + -ing</p>
 				<ul class="list-disc pl-6">
-					<li>Tomorrow at 8, I <strong>will be driving</strong>.</li>
+					<li class="text-base md:text-lg lg:text-xl">Tomorrow at 8, I <strong>will be driving</strong>.</li>
 				</ul>
 			</section>
 
 			<!-- FUTURE PERFECT -->
 			<section>
 				<h2 class="text-2xl font-semibold text-indigo-600">✅ Future Perfect</h2>
-				<p><strong>Se usa para:</strong> acciones completadas antes de un punto específico en el futuro.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Si aparece: <em>by the time, by 2025, before</em>.</p>
-				<p><strong>Estructura:</strong> will have + participio</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> acciones completadas antes de un punto específico en el futuro.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Si aparece: <em>by the time, by 2025, before</em>.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Estructura:</strong> will have + participio</p>
 				<ul class="list-disc pl-6">
-					<li>By Friday, she <strong>will have finished</strong> the project.</li>
+					<li class="text-base md:text-lg lg:text-xl">By Friday, she <strong>will have finished</strong> the project.</li>
 				</ul>
 			</section>
 
@@ -205,29 +256,29 @@
 			<!-- VOZ PASIVA -->
 			<section class="mt-10">
 				<h2 class="text-2xl font-semibold text-indigo-600">📢 Voz Pasiva</h2>
-				<p><strong>Se usa para:</strong> destacar la acción o el resultado más que al sujeto que la realiza.</p>
-				<p><strong>¿Cómo reconocerla?</strong> Presencia de <em>be</em> + participio pasado. Fíjate si el sujeto
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> destacar la acción o el resultado más que al sujeto que la realiza.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerla?</strong> Presencia de <em>be</em> + participio pasado. Fíjate si el sujeto
 					no realiza la acción.</p>
 				<ul class="list-disc pl-6 mt-2">
-					<li>The book <strong>was written</strong> by Orwell.</li>
-					<li>This cake <strong>was made</strong> yesterday.</li>
+					<li class="text-base md:text-lg lg:text-xl">The book <strong>was written</strong> by Orwell.</li>
+					<li class="text-base md:text-lg lg:text-xl">This cake <strong>was made</strong> yesterday.</li>
 				</ul>
 			</section>
 
 			<!-- CONDICIONALES -->
 			<section class="mt-10">
 				<h2 class="text-2xl font-semibold text-indigo-600">🔄 Condicionales</h2>
-				<p><strong>Se usan para:</strong> expresar condiciones reales, irreales o imposibles.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usan para:</strong> expresar condiciones reales, irreales o imposibles.</p>
 				<ul class="list-disc pl-6 mt-2">
-					<li><strong>Zero:</strong> If + present simple → present simple (hechos universales)<br>→ <em>If you
+					<li class="text-base md:text-lg lg:text-xl"><strong>Zero:</strong> If + present simple → present simple (hechos universales)<br>→ <em>If you
 							heat water, it boils.</em></li>
-					<li><strong>First:</strong> If + present simple → will + verbo<br>→ <em>If it rains, we will stay
+					<li class="text-base md:text-lg lg:text-xl"><strong>First:</strong> If + present simple → will + verbo<br>→ <em>If it rains, we will stay
 							home.</em></li>
-					<li><strong>Second:</strong> If + past simple → would + verbo<br>→ <em>If I had money, I would
+					<li class="text-base md:text-lg lg:text-xl"><strong>Second:</strong> If + past simple → would + verbo<br>→ <em>If I had money, I would
 							travel.</em></li>
-					<li><strong>Third:</strong> If + past perfect → would have + participio<br>→ <em>If I had studied, I
+					<li class="text-base md:text-lg lg:text-xl"><strong>Third:</strong> If + past perfect → would have + participio<br>→ <em>If I had studied, I
 							would have passed.</em></li>
-					<li><strong>Mixed:</strong> If + past perfect → would + verbo (presente hipotético)<br>→ <em>If I
+					<li class="text-base md:text-lg lg:text-xl"><strong>Mixed:</strong> If + past perfect → would + verbo (presente hipotético)<br>→ <em>If I
 							had slept, I wouldn’t be tired.</em></li>
 				</ul>
 			</section>
@@ -235,66 +286,66 @@
 			<!-- ESTILO INDIRECTO -->
 			<section class="mt-10">
 				<h2 class="text-2xl font-semibold text-indigo-600">🗣 Reported Speech (Estilo Indirecto)</h2>
-				<p><strong>Se usa para:</strong> repetir lo que alguien dijo sin usar comillas.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Presencia de cambios en los tiempos verbales y pronombres.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usa para:</strong> repetir lo que alguien dijo sin usar comillas.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Presencia de cambios en los tiempos verbales y pronombres.</p>
 				<ul class="list-disc pl-6 mt-2">
-					<li>Directo: <em>\"I am tired,\"</em> she said.<br>Indirecto: <strong>She said</strong> she
+					<li class="text-base md:text-lg lg:text-xl">Directo: <em>\"I am tired,\"</em> she said.<br>Indirecto: <strong>She said</strong> she
 						<strong>was tired</strong>.</li>
-					<li>\"I have seen it\" → She said she had seen it.</li>
-					<li>\"I will go\" → He said he would go.</li>
+					<li class="text-base md:text-lg lg:text-xl">\"I have seen it\" → She said she had seen it.</li>
+					<li class="text-base md:text-lg lg:text-xl">\"I will go\" → He said he would go.</li>
 				</ul>
 			</section>
 
 			<!-- VERBOS MODALES -->
 			<section class="mt-10">
 				<h2 class="text-2xl font-semibold text-indigo-600">🧠 Verbos Modales</h2>
-				<p><strong>Se usan para:</strong> expresar obligación, posibilidad, permiso o habilidad.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Se usan para:</strong> expresar obligación, posibilidad, permiso o habilidad.</p>
 				<ul class="list-disc pl-6 mt-2">
-					<li><strong>Can:</strong> habilidad o posibilidad → <em>She can swim.</em></li>
-					<li><strong>Must:</strong> obligación → <em>You must wear a seatbelt.</em></li>
-					<li><strong>Should:</strong> recomendación → <em>You should rest.</em></li>
-					<li><strong>Might / May:</strong> posibilidad → <em>It might rain.</em></li>
-					<li><strong>Have to:</strong> obligación externa → <em>I have to work early.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Can:</strong> habilidad o posibilidad → <em>She can swim.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Must:</strong> obligación → <em>You must wear a seatbelt.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Should:</strong> recomendación → <em>You should rest.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Might / May:</strong> posibilidad → <em>It might rain.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Have to:</strong> obligación externa → <em>I have to work early.</em></li>
 				</ul>
 			</section>
 
 			<!-- COMPARATIVOS Y SUPERLATIVOS -->
 			<section class="mt-10">
 				<h2 class="text-2xl font-semibold text-indigo-600">📏 Comparativos y Superlativos</h2>
-				<p><strong>Comparativo:</strong> -er o more para comparar dos cosas.<br><strong>Superlativo:</strong>
+				<p class="text-base md:text-lg lg:text-xl"><strong>Comparativo:</strong> -er o more para comparar dos cosas.<br><strong>Superlativo:</strong>
 					the -est o the most para expresar el grado más alto.</p>
-				<p><strong>¿Cómo reconocerlo?</strong> Palabras como <em>than</em> (comparativo) o <em>the most/the
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlo?</strong> Palabras como <em>than</em> (comparativo) o <em>the most/the
 						best</em> (superlativo).</p>
 				<ul class="list-disc pl-6 mt-2">
-					<li>She is <strong>taller than</strong> me.</li>
-					<li>This is <strong>the most expensive</strong> phone.</li>
+					<li class="text-base md:text-lg lg:text-xl">She is <strong>taller than</strong> me.</li>
+					<li class="text-base md:text-lg lg:text-xl">This is <strong>the most expensive</strong> phone.</li>
 				</ul>
 			</section>
 
 			<!-- ADVERBIOS: YET, STILL, ALREADY, FOR, SINCE -->
 			<section class="mt-10">
 				<h2 class="text-2xl font-semibold text-indigo-600">⏰ Adverbios: Yet, Still, Already, For, Since</h2>
-				<p><strong>¿Cómo reconocerlos?</strong> Suelen aparecer con Present Perfect y Present Perfect
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlos?</strong> Suelen aparecer con Present Perfect y Present Perfect
 					Continuous.</p>
 				<ul class="list-disc pl-6 mt-2">
-					<li><strong>Yet:</strong> al final en interrogativas o negativas → <em>Has he arrived yet?</em></li>
-					<li><strong>Already:</strong> en frases afirmativas → <em>She has already left.</em></li>
-					<li><strong>Still:</strong> antes del verbo → <em>I still don't know.</em></li>
-					<li><strong>For:</strong> + duración → <em>for two weeks</em></li>
-					<li><strong>Since:</strong> + punto de inicio → <em>since 2019</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Yet:</strong> al final en interrogativas o negativas → <em>Has he arrived yet?</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Already:</strong> en frases afirmativas → <em>She has already left.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Still:</strong> antes del verbo → <em>I still don't know.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>For:</strong> + duración → <em>for two weeks</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Since:</strong> + punto de inicio → <em>since 2019</em></li>
 				</ul>
 			</section>
 
 			<!-- CONECTORES -->
 			<section class="mt-10">
 				<h2 class="text-2xl font-semibold text-indigo-600">🔗 Conectores (Linking words)</h2>
-				<p><strong>¿Cómo reconocerlos?</strong> Están al inicio o en medio de frases para unir ideas.</p>
+				<p class="text-base md:text-lg lg:text-xl"><strong>¿Cómo reconocerlos?</strong> Están al inicio o en medio de frases para unir ideas.</p>
 				<ul class="list-disc pl-6 mt-2">
-					<li><strong>Although / Even though:</strong> contraste → <em>Although it rained, we went out.</em>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Although / Even though:</strong> contraste → <em>Although it rained, we went out.</em>
 					</li>
-					<li><strong>Because:</strong> causa → <em>We stayed home because it rained.</em></li>
-					<li><strong>So:</strong> resultado → <em>It was late, so we left.</em></li>
-					<li><strong>However:</strong> sin embargo → <em>It’s expensive; however, I bought it.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>Because:</strong> causa → <em>We stayed home because it rained.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>So:</strong> resultado → <em>It was late, so we left.</em></li>
+					<li class="text-base md:text-lg lg:text-xl"><strong>However:</strong> sin embargo → <em>It’s expensive; however, I bought it.</em></li>
 				</ul>
 			</section>
 
