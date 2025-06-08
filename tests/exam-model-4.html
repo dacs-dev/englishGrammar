@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Model 4</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Exam Model 4 – Practice Mode</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      { text: "How often _____ she play tennis?", options: ["does", "do", "is", "has"], answer: "does" },
+      { text: "They _____ gone to the cinema.", options: ["have", "has", "are", "was"], answer: "have" },
+      { text: "The car _____ while we were driving.", options: ["broke down", "breaks down", "breaking down", "was broke"], answer: "broke down" },
+      { text: "We _____ dinner when the guests arrived.", options: ["were having", "have", "had", "having"], answer: "were having" },
+      { text: "The homework _____ by the student before class.", options: ["had been done", "was done", "has do", "is doing"], answer: "had been done" },
+      { text: "He _____ play the piano when he was five.", options: ["could", "can", "must", "may"], answer: "could" },
+      { text: "This box is _____ heavy to lift.", options: ["too", "so", "enough", "such"], answer: "too" },
+      { text: "_____ she studies, she never gets good grades.", options: ["Although", "Because", "If", "When"], answer: "Although" },
+      { text: "If I won the lottery, I _____ a new house.", options: ["would buy", "buy", "bought", "will buy"], answer: "would buy" },
+      { text: "We _____ dinner at 8 p.m. every day.", options: ["have", "had", "are having", "has"], answer: "have" },
+      { text: "She _____ been working here for 10 years.", options: ["has", "have", "had", "was"], answer: "has" },
+      { text: "They _____ a great time at the party.", options: ["had", "have", "has", "having"], answer: "had" },
+      { text: "By this time next year, she _____ graduated.", options: ["will have", "has", "will", "is"], answer: "will have" },
+      { text: "You _____ speak during the test.", options: ["mustn't", "should", "can", "might"], answer: "mustn't" },
+      { text: "That was the man _____ stole my bike.", options: ["who", "which", "where", "what"], answer: "who" },
+      { text: "The meeting, _____ lasted two hours, was very productive.", options: ["which", "who", "where", "when"], answer: "which" },
+      { text: "He asked if I _____ like to join them.", options: ["would", "will", "do", "can"], answer: "would" },
+      { text: "My brother said, 'I don't like pizza.'", options: ["My brother said that he didn't like pizza.", "My brother said that he doesn't like pizza.", "My brother said he not like pizza.", "My brother said he won't like pizza."], answer: "My brother said that he didn't like pizza." },
+      { text: "He said: 'I was at home yesterday.'", options: ["He said that he had been at home the day before.", "He said he was home yesterday.", "He said he had been home yesterday.", "He said he had being home."], answer: "He said that he had been at home the day before." },
+      { text: "Where _____ you born?", options: ["were", "was", "did", "are"], answer: "were" },
+      { text: "The children _____ playing when their mother arrived.", options: ["were", "are", "was", "have been"], answer: "were" },
+      { text: "My parents _____ always wanted to visit Japan.", options: ["have", "has", "are", "was"], answer: "have" },
+      { text: "If he _____ harder, he would pass the test.", options: ["studied", "study", "studies", "had studied"], answer: "studied" },
+      { text: "That’s the girl _____ dog won the prize.", options: ["whose", "who", "which", "where"], answer: "whose" },
+      { text: "They _____ never been to France.", options: ["have", "has", "was", "did"], answer: "have" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

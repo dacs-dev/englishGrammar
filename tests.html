@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Tests</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  
+  <!-- Menú de navegación -->
+  <div id="menu"></div>
+  <script>
+    fetch('header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('menu').innerHTML = data;
+      });
+  </script>
+
+  <!-- Contenido principal -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center text-indigo-700 mb-6">📝 English Grammar Tests</h1>
+
+    <!-- Tests por categoría -->
+    <section class="mb-10">
+      <h2 class="text-xl font-semibold mb-4">📚 Tests por forma verbal</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="tests/present-simple.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Present Simple</a>
+        <a href="tests/present-continuous.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Present Continuous</a>
+        <a href="tests/present-perfect.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Present Perfect</a>
+        <a href="tests/present-perfect-continuous.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Present Perfect Continuous</a>
+        <a href="tests/past-simple.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Past Simple</a>
+        <a href="tests/conditionals.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Conditionals</a>
+        <a href="tests/passive.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Passive Voice</a>
+        <a href="tests/future-forms.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Future Forms</a>
+        <a href="tests/phrasal-verbs.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-indigo-50 transition">Phrasal Verbs</a>
+        <!-- Puedes seguir añadiendo enlaces a otras estructuras -->
+      </div>
+    </section>
+
+    <!-- Modelos de examen -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4">🧪 Modelos de examen completo</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="tests/exam-model-1.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-yellow-50 transition">Modelo 1</a>
+        <a href="tests/exam-model-2.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-yellow-50 transition">Modelo 2</a>
+        <a href="tests/exam-model-3.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-yellow-50 transition">Modelo 3</a>
+        <a href="tests/exam-model-4.html" class="bg-white shadow-md p-4 rounded-lg hover:bg-yellow-50 transition">Modelo 4</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

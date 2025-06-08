@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Model 3</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Exam Model 3 – Practice Mode</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "He _____ to the gym every weekend.",
+        options: ["goes", "go", "gone", "going"],
+        answer: "goes"
+      },
+      {
+        text: "We _____ to the museum yesterday.",
+        options: ["went", "go", "goes", "gone"],
+        answer: "went"
+      },
+      {
+        text: "She _____ working when I arrived.",
+        options: ["was", "is", "are", "be"],
+        answer: "was"
+      },
+      {
+        text: "They _____ finished their homework before dinner.",
+        options: ["had", "have", "has", "are"],
+        answer: "had"
+      },
+      {
+        text: "I _____ be able to come to the party.",
+        options: ["might", "must", "shouldn't", "shall"],
+        answer: "might"
+      },
+      {
+        text: "She’s _____ a beautiful dress!",
+        options: ["wearing", "wear", "wears", "wore"],
+        answer: "wearing"
+      },
+      {
+        text: "We will start the meeting _____ everyone is here.",
+        options: ["when", "while", "although", "unless"],
+        answer: "when"
+      },
+      {
+        text: "It was _____ a good meal that we ordered more.",
+        options: ["such", "so", "too", "enough"],
+        answer: "such"
+      },
+      {
+        text: "_____ it rains, we will cancel the picnic.",
+        options: ["If", "Unless", "Although", "While"],
+        answer: "If"
+      },
+      {
+        text: "He said: 'I am leaving now.'",
+        options: ["He said that he was leaving then.", "He said that he is leaving now.", "He said he leave now.", "He said he leaving."],
+        answer: "He said that he was leaving then."
+      },
+      {
+        text: "I have lived here _____ 2015.",
+        options: ["since", "for", "during", "from"],
+        answer: "since"
+      },
+      {
+        text: "My keys, _____ I left on the table, are missing.",
+        options: ["which", "who", "where", "whose"],
+        answer: "which"
+      },
+      {
+        text: "The work _____ by professionals.",
+        options: ["was done", "do", "did", "doing"],
+        answer: "was done"
+      },
+      {
+        text: "He _____ to finish his project tomorrow.",
+        options: ["is going", "going", "go", "goes"],
+        answer: "is going"
+      },
+      {
+        text: "If you _____ earlier, we would have caught the train.",
+        options: ["had arrived", "arrive", "arrived", "have arrived"],
+        answer: "had arrived"
+      },
+      {
+        text: "She said she _____ be late.",
+        options: ["might", "can", "must", "has to"],
+        answer: "might"
+      },
+      {
+        text: "They _____ playing football when it started to rain.",
+        options: ["were", "was", "are", "be"],
+        answer: "were"
+      },
+      {
+        text: "_____ you mind closing the door?",
+        options: ["Would", "Do", "Are", "Shall"],
+        answer: "Would"
+      },
+      {
+        text: "The cake _____ baked by my aunt.",
+        options: ["was", "has", "is", "were"],
+        answer: "was"
+      },
+      {
+        text: "You _____ talk during the movie.",
+        options: ["shouldn't", "might", "can", "shall"],
+        answer: "shouldn't"
+      },
+      {
+        text: "He asked me if I _____ been there before.",
+        options: ["had", "have", "has", "am"],
+        answer: "had"
+      },
+      {
+        text: "If it _____ tomorrow, we’ll go hiking.",
+        options: ["doesn't rain", "won’t rain", "didn’t rain", "not rain"],
+        answer: "doesn't rain"
+      },
+      {
+        text: "She runs _____ than me.",
+        options: ["faster", "more fast", "fastly", "fastest"],
+        answer: "faster"
+      },
+      {
+        text: "They _____ in the living room when we arrived.",
+        options: ["were sitting", "sat", "sit", "sits"],
+        answer: "were sitting"
+      },
+      {
+        text: "_____ you like some coffee?",
+        options: ["Would", "Shall", "Do", "Did"],
+        answer: "Would"
+      }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

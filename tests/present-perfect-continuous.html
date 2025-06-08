@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Present Perfect Continuous Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Test – Present Perfect Continuous</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      { text: "I _____ working here since June.", options: ["have been", "has been", "am", "was"], answer: "have been" },
+      { text: "She _____ studying all day.", options: ["has been", "have been", "is", "was"], answer: "has been" },
+      { text: "They _____ playing football for two hours.", options: ["have been", "has been", "are", "were"], answer: "have been" },
+      { text: "He _____ watching TV for three hours.", options: ["has been", "have been", "is", "was"], answer: "has been" },
+      { text: "We _____ waiting since morning.", options: ["have been", "has been", "are", "were"], answer: "have been" },
+      { text: "_____ she been sleeping all day?", options: ["Has", "Have", "Is", "Did"], answer: "Has" },
+      { text: "I _____ not been feeling well lately.", options: ["have", "has", "am", "was"], answer: "have" },
+      { text: "He _____ not been answering my calls.", options: ["has", "have", "is", "was"], answer: "has" },
+      { text: "They _____ not been coming to class.", options: ["have", "has", "are", "do"], answer: "have" },
+      { text: "_____ you been exercising regularly?", options: ["Have", "Has", "Did", "Do"], answer: "Have" },
+      { text: "She _____ been working here for five years.", options: ["has", "have", "is", "did"], answer: "has" },
+      { text: "We _____ been discussing this topic for hours.", options: ["have", "has", "are", "did"], answer: "have" },
+      { text: "They _____ been fixing the car since this morning.", options: ["have", "has", "are", "do"], answer: "have" },
+      { text: "He _____ been training for the marathon.", options: ["has", "have", "is", "was"], answer: "has" },
+      { text: "You _____ been acting strange lately.", options: ["have", "has", "are", "were"], answer: "have" },
+      { text: "We _____ not been sleeping well.", options: ["have", "has", "are", "were"], answer: "have" },
+      { text: "_____ they been working on the project?", options: ["Have", "Has", "Are", "Did"], answer: "Have" },
+      { text: "I _____ been reading this book for a week.", options: ["have", "has", "am", "did"], answer: "have" },
+      { text: "She _____ not been attending the meetings.", options: ["has", "have", "is", "was"], answer: "has" },
+      { text: "They _____ been driving for six hours.", options: ["have", "has", "are", "did"], answer: "have" },
+      { text: "He _____ been learning French since January.", options: ["has", "have", "is", "was"], answer: "has" },
+      { text: "We _____ been planning the trip for months.", options: ["have", "has", "are", "were"], answer: "have" },
+      { text: "You _____ been helping a lot.", options: ["have", "has", "are", "were"], answer: "have" },
+      { text: "I _____ not been checking my email lately.", options: ["have", "has", "am", "did"], answer: "have" },
+      { text: "She _____ been feeling sick.", options: ["has", "have", "is", "did"], answer: "has" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

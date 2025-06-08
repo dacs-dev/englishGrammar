@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Past Simple Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Test – Past Simple</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      { text: "She _____ to the party last night.", options: ["went", "goes", "has gone", "is going"], answer: "went" },
+      { text: "They _____ the game yesterday.", options: ["won", "win", "wins", "winning"], answer: "won" },
+      { text: "I _____ my keys this morning.", options: ["lost", "lose", "loses", "am losing"], answer: "lost" },
+      { text: "He _____ very late last night.", options: ["arrived", "arrives", "has arrived", "is arriving"], answer: "arrived" },
+      { text: "We _____ a new car last month.", options: ["bought", "buy", "have bought", "are buying"], answer: "bought" },
+      { text: "Did you _____ the movie yesterday?", options: ["see", "saw", "seen", "seeing"], answer: "see" },
+      { text: "He didn’t _____ the meeting.", options: ["attend", "attended", "attends", "attending"], answer: "attend" },
+      { text: "I _____ in London in 2010.", options: ["lived", "live", "have lived", "am living"], answer: "lived" },
+      { text: "She _____ to the gym every day last week.", options: ["went", "go", "goes", "is going"], answer: "went" },
+      { text: "They _____ late to school yesterday.", options: ["arrived", "arrive", "arrives", "are arriving"], answer: "arrived" },
+      { text: "We _____ a great time at the party.", options: ["had", "have", "has", "are having"], answer: "had" },
+      { text: "He _____ his homework on time.", options: ["finished", "finish", "finishes", "is finishing"], answer: "finished" },
+      { text: "I _____ him at the mall last weekend.", options: ["saw", "see", "seen", "am seeing"], answer: "saw" },
+      { text: "She _____ a beautiful dress to the wedding.", options: ["wore", "wear", "wears", "is wearing"], answer: "wore" },
+      { text: "They _____ their vacation in Spain.", options: ["enjoyed", "enjoy", "enjoys", "are enjoying"], answer: "enjoyed" },
+      { text: "Did she _____ the news?", options: ["hear", "heard", "hears", "hearing"], answer: "hear" },
+      { text: "He _____ his leg while skiing.", options: ["broke", "break", "breaks", "is breaking"], answer: "broke" },
+      { text: "We _____ a lot of fun at the zoo.", options: ["had", "have", "has", "are having"], answer: "had" },
+      { text: "I _____ a great book last night.", options: ["read", "reads", "am reading", "has read"], answer: "read" },
+      { text: "She _____ breakfast at 7 AM.", options: ["ate", "eats", "eat", "is eating"], answer: "ate" },
+      { text: "They _____ the tickets online.", options: ["booked", "book", "books", "are booking"], answer: "booked" },
+      { text: "Did you _____ to the concert?", options: ["go", "went", "gone", "going"], answer: "go" },
+      { text: "He didn’t _____ the message.", options: ["receive", "received", "receives", "is receiving"], answer: "receive" },
+      { text: "I _____ my friends last Saturday.", options: ["visited", "visit", "visits", "am visiting"], answer: "visited" },
+      { text: "She _____ at home all day.", options: ["stayed", "stay", "stays", "is staying"], answer: "stayed" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

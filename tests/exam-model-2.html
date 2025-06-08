@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exam Model 2</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Exam Model 2 – Practice Mode</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      {
+        text: "She ______ very well when she was a child.",
+        options: ["sang", "sing", "sung", "singing"],
+        answer: "sang"
+      },
+      {
+        text: "They _____ to New York next month.",
+        options: ["are flying", "fly", "flew", "was flying"],
+        answer: "are flying"
+      },
+      {
+        text: "I usually _____ up at 7 a.m.",
+        options: ["get", "got", "gets", "getting"],
+        answer: "get"
+      },
+      {
+        text: "He _____ eaten sushi before.",
+        options: ["has", "have", "had", "is"],
+        answer: "has"
+      },
+      {
+        text: "We _____ for an hour when it started raining.",
+        options: ["had been walking", "walked", "were walking", "have walked"],
+        answer: "had been walking"
+      },
+      {
+        text: "By 2025, she _____ her degree.",
+        options: ["will have completed", "completes", "complete", "will be complete"],
+        answer: "will have completed"
+      },
+      {
+        text: "You _____ be late for class!",
+        options: ["mustn't", "might", "can", "shall"],
+        answer: "mustn't"
+      },
+      {
+        text: "It was _____ an interesting book that I read it twice.",
+        options: ["such", "so", "too", "enough"],
+        answer: "such"
+      },
+      {
+        text: "I think I _____ go to the cinema tonight.",
+        options: ["will", "shall", "would", "am going"],
+        answer: "will"
+      },
+      {
+        text: "_____ he studied hard, he failed the exam.",
+        options: ["Although", "Because", "So", "And"],
+        answer: "Although"
+      },
+      {
+        text: "If I _____ you, I wouldn’t do that.",
+        options: ["were", "am", "be", "have been"],
+        answer: "were"
+      },
+      {
+        text: "If they had called, we _____ have known.",
+        options: ["would", "would have", "will", "had"],
+        answer: "would have"
+      },
+      {
+        text: "She walked _____ the river.",
+        options: ["along", "on", "under", "by"],
+        answer: "along"
+      },
+      {
+        text: "If you _____ water, it boils.",
+        options: ["heat", "heated", "heats", "heating"],
+        answer: "heat"
+      },
+      {
+        text: "The cake _____ by my sister.",
+        options: ["was made", "made", "has making", "was making"],
+        answer: "was made"
+      },
+      {
+        text: "He's been sick all week, _____ he?",
+        options: ["hasn't", "isn't", "wasn't", "didn't"],
+        answer: "hasn't"
+      },
+      {
+        text: "That movie _____ by many people.",
+        options: ["was seen", "see", "saw", "was seeing"],
+        answer: "was seen"
+      },
+      {
+        text: "The teacher, _____ students love her, is very strict.",
+        options: ["whose", "who", "which", "where"],
+        answer: "whose"
+      },
+      {
+        text: "He said: 'I will visit Rome next year'.",
+        options: ["He said that he would visit Rome the next year.", "He said he will visit Rome next year.", "He said that he is visiting Rome next year.", "He said that he visits Rome next year."],
+        answer: "He said that he would visit Rome the next year."
+      },
+      {
+        text: "She said: 'I'm tired'.",
+        options: ["She said that she was tired.", "She said that she is tired.", "She said she be tired.", "She said that she has tired."],
+        answer: "She said that she was tired."
+      },
+      {
+        text: "Anna said: 'I'm going to buy a car'.",
+        options: ["Anna said that she was going to buy a car.", "Anna said that she will buy a car.", "Anna said she buys a car.", "Anna said she going buy a car."],
+        answer: "Anna said that she was going to buy a car."
+      },
+      {
+        text: "She _____ to the market every Saturday.",
+        options: ["goes", "go", "gone", "going"],
+        answer: "goes"
+      },
+      {
+        text: "They haven't seen him _____ last Christmas.",
+        options: ["since", "for", "from", "at"],
+        answer: "since"
+      },
+      {
+        text: "He _____ to school when he was a boy.",
+        options: ["walked", "walk", "walking", "walks"],
+        answer: "walked"
+      },
+      {
+        text: "We _____ in this city for ten years.",
+        options: ["have lived", "lived", "live", "are living"],
+        answer: "have lived"
+      }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>English Grammar Cards</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<style>
+		.card {
+			perspective: 1000px;
+			height: auto;
+			min-height: 20rem;
+		}
+
+		.card-inner {
+			transition: transform 0.6s;
+			transform-style: preserve-3d;
+			min-height: 100%;
+			position: relative;
+		}
+
+		.card.flipped .card-inner {
+			transform: rotateY(180deg);
+		}
+
+		.card-front,
+		.card-back {
+			backface-visibility: hidden;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			padding: 1.5rem;
+			border-radius: 1rem;
+			overflow-y: auto;
+			min-height: 100%;
+		}
+
+		.card-back {
+			transform: rotateY(180deg);
+		}
+	</style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex-column items-center justify-center p-4">
+
+	<!-- Navigation Menu -->
+	<nav class="bg-white shadow-md sticky top-0 z-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between h-16">
+				<div class="flex">
+					<div class="flex-shrink-0 flex items-center">
+						<span class="text-xl font-bold text-indigo-600">English Cards</span>
+					</div>
+					<div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+						<a href="tests.html"
+							class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition-all">Tests</a>
+						<a href="grammar.html"
+							class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition-all">Grammar</a>
+						<a href="irregular-verbs.html"
+							class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition-all">Irregular
+							Verbs</a>
+						<a href="others.html"
+							class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-700 hover:border-indigo-500 hover:text-indigo-600 transition-all">Others</a>
+					</div>
+				</div>
+
+				<!-- Mobile menu button -->
+				<div class="-mr-2 flex items-center sm:hidden">
+					<button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" type="button"
+						class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none">
+						<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+							stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16" />
+						</svg>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Mobile Menu -->
+		<div class="sm:hidden hidden" id="mobile-menu">
+			<div class="pt-2 pb-3 space-y-1">
+				<a href="tests.html"
+					class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:border-indigo-500 hover:bg-gray-50 hover:text-indigo-600">Tests</a>
+				<a href="grammar.html"
+					class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:border-indigo-500 hover:bg-gray-50 hover:text-indigo-600">Grammar</a>
+				<a href="irregular-verbs.html"
+					class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:border-indigo-500 hover:bg-gray-50 hover:text-indigo-600">Irregular
+					Verbs</a>
+				<a href="others.html"
+					class="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-700 hover:border-indigo-500 hover:bg-gray-50 hover:text-indigo-600">Others</a>
+			</div>
+		</div>
+	</nav>
+
+
+
+	<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6 w-full max-w-5xl">
+		<!-- Pronouns Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center">
+					<h2 class="text-xl font-bold text-gray-800">Pronouns</h2>
+				</div>
+				<div class="card-back bg-green-100 shadow-lg text-gray-800 text-sm">
+					<h3 class="text-lg font-semibold mb-2">Pronouns</h3>
+					<p class="mt-2 text-xs italic text-gray-700">
+						🔹 <strong>Nota:</strong> Los pronombres no se modifican añadiendo “-s”, “-es” u otras
+						terminaciones. Su forma es fija y
+						depende de su función en la oración.
+					</p>
+
+					<p class="mb-1"><strong>Personal Pronouns:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>I, you, he, she, it, we, they</li>
+					</ul>
+					<p class="mb-1"><strong>Object Pronouns:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>me, you, him, her, it, us, them</li>
+					</ul>
+					<p class="mb-1"><strong>Possessive Adjectives:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>my, your, his, her, its, our, their</li>
+						<li><em>Example:</em> This is <strong>my</strong> book.</li>
+					</ul>
+					<p class="mb-1"><strong>Possessive Pronouns:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>mine, yours, his, hers, its*, ours, theirs</li>
+						<li><em>Example:</em> This book is <strong>mine</strong>.</li>
+						<li class="text-xs italic">*"its" as possessive pronoun is rarely used</li>
+					</ul>
+					<p class="mb-1"><strong>Reflexive Pronouns:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>myself, yourself, himself, herself, itself, ourselves, yourselves, themselves</li>
+					</ul>
+					<table class="w-full text-sm text-left border border-gray-300 mb-4">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-2 border">Adjetivo Posesivo</th>
+								<th class="p-2 border">Pronombre Posesivo</th>
+								<th class="p-2 border">Ejemplo</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-2 border">my</td>
+								<td class="p-2 border">mine</td>
+								<td class="p-2 border">This is <strong>my</strong> phone → This phone is
+									<strong>mine</strong>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-2 border">your</td>
+								<td class="p-2 border">yours</td>
+								<td class="p-2 border">Is that <strong>your</strong> dog? → Yes, it’s
+									<strong>yours</strong>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-2 border">his</td>
+								<td class="p-2 border">his</td>
+								<td class="p-2 border">That is <strong>his</strong> jacket → That jacket is
+									<strong>his</strong>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-2 border">her</td>
+								<td class="p-2 border">hers</td>
+								<td class="p-2 border">It’s <strong>her</strong> idea → The idea is
+									<strong>hers</strong>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-2 border">our</td>
+								<td class="p-2 border">ours</td>
+								<td class="p-2 border">That’s <strong>our</strong> car → That car is
+									<strong>ours</strong>
+								</td>
+							</tr>
+							<tr>
+								<td class="p-2 border">their</td>
+								<td class="p-2 border">theirs</td>
+								<td class="p-2 border">This is <strong>their</strong> house → This house is
+									<strong>theirs</strong>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<p class="text-xs italic text-gray-700">
+						🔹 <strong>Nota:</strong> Los pronombres no se modifican con “-s”, “-es” ni otras terminaciones.
+						Su forma es fija y depende de su función gramatical en la oración. <br />
+						❌ Incorrecto: <em>hers dogs</em> → ✅ Correcto: <em>her dogs</em> ("her" es un adjetivo posesivo
+						que acompaña a un sustantivo).
+					</p>
+					🔹 <strong>Nota:</strong> Los pronombres no se modifican con “-s”, “-es” ni otras terminaciones. Su
+					forma es fija y depende de su función gramatical en la oración. <br />
+					❌ Incorrecto: <em>hers dogs</em> → ✅ Correcto: <em>her dogs</em> ("her" es un adjetivo posesivo que
+					acompaña a un sustantivo).
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Present Simple + State & Action Verbs Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center">
+					<h2 class="text-xl font-bold text-gray-800 px-4">Present Simple + State & Action Verbs</h2>
+				</div>
+				<div class="card-back bg-yellow-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Present Simple + State & Action Verbs</h3>
+
+					<p class="mb-2"><strong>Structure:</strong> Subject + base verb (add <strong>-s/-es/-ies</strong>
+						for <em>he/she/it</em>)</p>
+					<ul class="list-disc list-inside mb-2">
+						<li>I work / He works</li>
+						<li>They play / She plays</li>
+					</ul>
+
+					<p class="mb-1"><strong>Use:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Habits and routines (e.g. I brush my teeth every day)</li>
+						<li>General truths (e.g. The sun rises in the east)</li>
+						<li>Permanent situations (e.g. He lives in Madrid)</li>
+						<li>Timetables (e.g. The train leaves at 8 a.m.)</li>
+					</ul>
+
+					<p class="mb-1"><strong>State verbs (non-action):</strong> Used with <em>Present Simple</em>, not
+						normally with <em>-ing</em></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>like, love, hate, prefer</li>
+						<li>believe, know, understand, remember</li>
+						<li>need, want, belong, own, seem</li>
+					</ul>
+					<p class="italic text-xs mb-2">✅ I know the answer — ❌ I am knowing the answer</p>
+
+					<p class="mb-1"><strong>Action verbs:</strong> Describe physical/observable actions. Used in all
+						tenses.</p>
+					<ul class="list-disc list-inside mb-2">
+						<li>run, eat, play, write, read, cook, speak</li>
+					</ul>
+
+					<p class="mb-1"><strong>Spelling rules for <em>he/she/it</em>:</strong></p>
+					<table class="w-full text-sm border border-gray-300 mb-2">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Verb type</th>
+								<th class="p-1 border">Rule</th>
+								<th class="p-1 border">Example</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">Regular verb</td>
+								<td class="p-1 border">+s</td>
+								<td class="p-1 border">play → plays</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">-s, -sh, -ch, -x, -o</td>
+								<td class="p-1 border">+es</td>
+								<td class="p-1 border">go → goes</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">Consonant + y</td>
+								<td class="p-1 border">y → ies</td>
+								<td class="p-1 border">study → studies</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">Vowel + y</td>
+								<td class="p-1 border">+s</td>
+								<td class="p-1 border">play → plays</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p class="mb-1"><strong>No -s for:</strong> I, you, we, they → <em>They read books.</em></p>
+
+					<p class="mt-2 mb-0"><strong>Common mistakes:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>❌ She go to school → ✅ She <strong>goes</strong> to school</li>
+						<li>❌ I am know him → ✅ I <strong>know</strong> him</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Present Continuous Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Present Continuous</h2>
+				</div>
+				<div class="card-back bg-indigo-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Present Continuous</h3>
+
+					<p class="mb-2"><strong>Structure:</strong> Subject + am/is/are + verb-ing</p>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Pronoun</th>
+								<th class="p-1 border">Form</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">I</td>
+								<td class="p-1 border">am working</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">You / We / They</td>
+								<td class="p-1 border">are playing</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">He / She / It</td>
+								<td class="p-1 border">is reading</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p class="mb-1"><strong>Use:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Actions happening now → <em>She is talking on the phone.</em></li>
+						<li>Temporary situations → <em>I’m staying with my cousin this week.</em></li>
+						<li>Changes/developments → <em>The climate is getting warmer.</em></li>
+						<li>Repeated annoying actions → <em>He is always complaining.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>State verbs:</strong> Normally not used in -ing form</p>
+					<ul class="list-disc list-inside mb-2">
+						<li>know, believe, understand, remember</li>
+						<li>want, like, love, hate, need</li>
+						<li>belong, own, seem</li>
+					</ul>
+					<p class="italic text-xs mb-2">❌ I am knowing → ✅ I know</p>
+
+					<p class="mb-1"><strong>Spelling rules for -ing:</strong></p>
+					<table class="w-full text-sm border border-gray-300 mb-2">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Case</th>
+								<th class="p-1 border">Rule</th>
+								<th class="p-1 border">Example</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">Ends in -e</td>
+								<td class="p-1 border">Drop -e, add -ing</td>
+								<td class="p-1 border">write → writing</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">1 vowel + 1 consonant</td>
+								<td class="p-1 border">Double consonant</td>
+								<td class="p-1 border">run → running</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">2 vowels/consonants</td>
+								<td class="p-1 border">Just add -ing</td>
+								<td class="p-1 border">read → reading</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">Ends in -ie</td>
+								<td class="p-1 border">Change to -ying</td>
+								<td class="p-1 border">die → dying</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p class="mb-1"><strong>Common mistakes:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>❌ He working → ✅ He <strong>is</strong> working</li>
+						<li>❌ She is read → ✅ She is <strong>reading</strong></li>
+						<li>❌ We are goes → ✅ We are <strong>going</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Present Perfect Simple Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Present Perfect Simple</h2>
+				</div>
+				<div class="card-back bg-rose-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Present Perfect Simple</h3>
+
+					<p class="mb-2"><strong>Structure:</strong> Subject + have/has + past participle</p>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Pronoun</th>
+								<th class="p-1 border">Form</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">I / You / We / They</td>
+								<td class="p-1 border">have worked</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">He / She / It</td>
+								<td class="p-1 border">has gone</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p class="mb-1"><strong>Use:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Experiences → <em>I have visited London.</em></li>
+						<li>Present relevance → <em>I have lost my keys.</em></li>
+						<li>Recent actions (just) → <em>He has just arrived.</em></li>
+						<li>Unfinished time (for/since) → <em>They have lived here for 10 years.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Common adverbs:</strong> ever, never, just, already, yet, still, for, since,
+						recently, lately</p>
+
+					<p class="mb-1"><strong>Past participle formation:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Regular: base + -ed → <em>worked, lived</em></li>
+						<li>Irregular: learned forms → <em>gone, eaten, seen</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Word order with adverbs:</strong></p>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Adverb</th>
+								<th class="p-1 border">Position</th>
+								<th class="p-1 border">Example</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">ever / never</td>
+								<td class="p-1 border">Between aux & participle</td>
+								<td class="p-1 border">Have you <strong>ever</strong> seen it?</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">just / already</td>
+								<td class="p-1 border">Same</td>
+								<td class="p-1 border">She has <strong>just</strong> arrived.</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">yet</td>
+								<td class="p-1 border">End (questions/negatives)</td>
+								<td class="p-1 border">Have you eaten <strong>yet</strong>?</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p class="mb-1"><strong>Common mistakes:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>❌ I have went → ✅ I have <strong>gone</strong></li>
+						<li>❌ She has eat → ✅ She has <strong>eaten</strong></li>
+						<li>❌ Did you ever see it? → ✅ Have you <strong>ever seen</strong> it?</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Present Perfect Continuous Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Present Perfect Continuous</h2>
+				</div>
+				<div class="card-back bg-lime-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Present Perfect Continuous</h3>
+
+					<p class="mb-2"><strong>Structure:</strong> Subject + have/has + been + verb-ing</p>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Pronoun</th>
+								<th class="p-1 border">Form</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">I / You / We / They</td>
+								<td class="p-1 border">have been working</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">He / She / It</td>
+								<td class="p-1 border">has been studying</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p class="mb-1"><strong>Use:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>To emphasize the <strong>duration</strong> of an activity → <em>We have been working for 3
+								hours.</em></li>
+						<li>To describe <strong>recent activities with visible results</strong> → <em>You look tired.
+								Have you been running?</em></li>
+						<li>To express <strong>temporary actions</strong> → <em>He has been staying with friends.</em>
+						</li>
+					</ul>
+
+					<p class="mb-1"><strong>Common time expressions:</strong> for, since, lately, recently, all day, how
+						long?</p>
+
+					<p class="mb-1"><strong>Spelling notes for verb-ing:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>drop -e → come → coming</li>
+						<li>double consonant → run → running</li>
+						<li>-ie → -ying → die → dying</li>
+					</ul>
+
+					<p class="mb-1"><strong>Differences from Present Perfect Simple:</strong></p>
+					<ul class="list-disc list-inside mb-4">
+						<li><strong>Perfect Continuous</strong> = focus on <em>duration</em> → <em>I have been reading
+								for 2 hours.</em></li>
+						<li><strong>Perfect Simple</strong> = focus on <em>result</em> → <em>I have read 100 pages.</em>
+						</li>
+					</ul>
+
+					<p class="mb-1"><strong>Common mistakes:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>❌ She has being studying → ✅ She has <strong>been</strong> studying</li>
+						<li>❌ We have been wait → ✅ We have been <strong>waiting</strong></li>
+						<li>❌ He has been works → ✅ He has been <strong>working</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Past Time & Present Perfect Simple Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Past Time & Present Perfect</h2>
+				</div>
+				<div class="card-back bg-orange-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Past Time vs Present Perfect Simple</h3>
+
+					<p class="mb-2"><strong>Past Simple:</strong> Subject + past verb (regular +ed / irregular form)</p>
+					<p class="mb-2"><strong>Present Perfect:</strong> Subject + have/has + past participle</p>
+
+					<h4 class="text-sm font-semibold mt-3 mb-1">🕒 Use Past Simple:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Completed actions in the past with a clear time → <em>I went to Paris in 2020.</em></li>
+						<li>Finished periods → <em>She worked there last year.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🕒 Use Present Perfect:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Actions with no specific time → <em>He has visited Rome.</em></li>
+						<li>Life experience → <em>Have you ever seen a whale?</em></li>
+						<li>Actions that affect the present → <em>I’ve lost my phone (I don’t have it now).</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Time markers:</strong></p>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Past Simple</th>
+								<th class="p-1 border">Present Perfect</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">yesterday, last week, in 2010, when I was 10</td>
+								<td class="p-1 border">ever, never, already, just, yet, for, since, recently</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Key differences:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Past Simple = When? ✔️ → <em>She left an hour ago.</em></li>
+						<li>Present Perfect = When? ❌ → <em>She has left.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Common mistakes:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>❌ I have seen her yesterday → ✅ I <strong>saw</strong> her yesterday</li>
+						<li>❌ Did you ever go to Italy? → ✅ <strong>Have</strong> you ever gone to Italy?</li>
+						<li>❌ He has finished his homework last night → ✅ He <strong>finished</strong> it last night
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Past Continuous Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Past Continuous</h2>
+				</div>
+				<div class="card-back bg-sky-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Past Continuous</h3>
+
+					<p class="mb-2"><strong>Structure:</strong> Subject + was/were + verb-ing</p>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Pronoun</th>
+								<th class="p-1 border">Form</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">I / He / She / It</td>
+								<td class="p-1 border">was working</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">You / We / They</td>
+								<td class="p-1 border">were studying</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p class="mb-1"><strong>Use:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Ongoing actions in the past → <em>She was reading at 9 p.m.</em></li>
+						<li>Background actions in a story → <em>The sun was shining and birds were singing.</em></li>
+						<li>Interrupted actions (often with “when” or “while”) → <em>I was cooking when the phone
+								rang.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Time markers:</strong> while, as, when, all day, at that moment, all
+						morning, etc.</p>
+
+					<p class="mb-1"><strong>Spelling rules for -ing:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>stop → stopping (double consonant)</li>
+						<li>come → coming (drop -e)</li>
+						<li>die → dying (-ie → -ying)</li>
+					</ul>
+
+					<p class="mb-1"><strong>Past Continuous vs Past Simple:</strong></p>
+					<ul class="list-disc list-inside mb-4">
+						<li>Past Continuous = longer/ongoing action</li>
+						<li>Past Simple = shorter/interruption</li>
+						<li><em>I was watching TV when the lights went out.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Common mistakes:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>❌ He were playing → ✅ He <strong>was</strong> playing</li>
+						<li>❌ We was study → ✅ We <strong>were</strong> studying</li>
+						<li>❌ I was to cook → ✅ I was <strong>cooking</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Past Perfect Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Past Perfect</h2>
+				</div>
+				<div class="card-back bg-purple-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Past Perfect</h3>
+
+					<p class="mb-2"><strong>Structure:</strong> Subject + had + past participle</p>
+					<ul class="list-disc list-inside mb-2">
+						<li><em>I had finished</em> before they arrived.</li>
+						<li><em>She had already left</em> when we got there.</li>
+					</ul>
+
+					<p class="mb-1"><strong>Use:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>To describe an action completed <strong>before another past action</strong> → <em>He had
+								left before the movie started.</em></li>
+						<li>To express <strong>cause/effect in the past</strong> → <em>She was tired because she had
+								worked all night.</em></li>
+						<li>To give <strong>background or clarify sequence</strong> in storytelling → <em>I had never
+								seen snow before that day.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Common time markers:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li>before, after, by the time, already, just, never, when, as soon as, until then</li>
+					</ul>
+
+					<p class="mb-1"><strong>Past Perfect vs Past Simple:</strong></p>
+					<ul class="list-disc list-inside mb-4">
+						<li><strong>Past Perfect</strong> = happened <em>first</em> → <em>They had eaten</em></li>
+						<li><strong>Past Simple</strong> = happened <em>second</em> → <em>when I arrived.</em></li>
+						<li>Example: <em>They had finished dinner when I arrived.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Negative form:</strong> had + not + past participle → <em>She hadn’t called
+							me.</em></p>
+					<p class="mb-2"><strong>Question form:</strong> Had + subject + past participle? → <em>Had you
+							studied?</em></p>
+
+					<p class="mb-1"><strong>Common mistakes:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>❌ He didn’t had lunch → ✅ He <strong>hadn’t had</strong> lunch</li>
+						<li>❌ Did you had dinner? → ✅ <strong>Had</strong> you had dinner?</li>
+						<li>❌ I had went home → ✅ I <strong>had gone</strong> home</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Future Time: Will & Going to Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Future: Will & Going to</h2>
+				</div>
+				<div class="card-back bg-emerald-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Future Time: Will & Going to</h3>
+
+					<p class="mb-2"><strong>Will: </strong>Subject + will + base verb</p>
+					<p class="mb-2"><strong>Going to: </strong>Subject + am/is/are + going to + base verb</p>
+
+					<h4 class="text-sm font-semibold mb-1">✅ Use <em>will</em> for:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Spontaneous decisions → <em>I’ll help you!</em></li>
+						<li>Promises, offers, threats → <em>I won’t forget.</em></li>
+						<li>Predictions (opinion-based) → <em>I think it will rain.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">✅ Use <em>going to</em> for:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Planned actions/intentions → <em>I’m going to study tonight.</em></li>
+						<li>Evidence-based predictions → <em>Look at those clouds! It’s going to rain.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Examples:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li><em>She’s going to visit her grandmother next weekend.</em></li>
+						<li><em>He’ll call you as soon as he arrives.</em></li>
+						<li><em>I’m not going to buy it. It’s too expensive.</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Time expressions:</strong> tomorrow, next week, in 2030, soon, later,
+						tonight, in a minute</p>
+
+					<p class="mb-1"><strong>Negative form:</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li><em>will not (won’t)</em> → <em>I won’t go</em></li>
+						<li><em>am/is/are not going to</em> → <em>She isn’t going to study</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Questions:</strong></p>
+					<ul class="list-disc list-inside mb-4">
+						<li><em>Will you come?</em></li>
+						<li><em>Are they going to travel?</em></li>
+					</ul>
+
+					<p class="mb-1"><strong>Common mistakes:</strong></p>
+					<ul class="list-disc list-inside">
+						<li>❌ He will going → ✅ He <strong>will go</strong></li>
+						<li>❌ I am going to will buy it → ✅ I <strong>am going to buy</strong> it</li>
+						<li>❌ Are you will help me? → ✅ <strong>Will you</strong> help me?</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Future Continuous, Future Perfect Simple & Continuous Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Future Continuous,<br>Future Perfect &
+						Continuous</h2>
+				</div>
+				<div class="card-back bg-teal-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Future Continuous, Future Perfect & Future Perfect Continuous
+					</h3>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Future Continuous</h4>
+					<p class="mb-2"><strong>Structure:</strong> will + be + verb-ing</p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Action in progress at a future time → <em>This time tomorrow, I’ll be flying to London.</em>
+						</li>
+						<li>Polite/neutral questions about plans → <em>Will you be joining us later?</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Future Perfect Simple</h4>
+					<p class="mb-2"><strong>Structure:</strong> will + have + past participle</p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Action completed before a point in the future → <em>I will have finished the report by
+								Monday.</em></li>
+						<li>Often used with “by”, “before”, or specific deadlines</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Future Perfect Continuous</h4>
+					<p class="mb-2"><strong>Structure:</strong> will + have + been + verb-ing</p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Focus on duration of an action until a future moment → <em>By July, I’ll have been working
+								here for 10 years.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⏱ Time markers:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Future Continuous:</strong> this time tomorrow, at 5 p.m., in a few hours</li>
+						<li><strong>Future Perfect:</strong> by next week, before Sunday, by the end of the month</li>
+						<li><strong>Future Perfect Continuous:</strong> for, since, by then, for over two hours</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ I will be work tomorrow → ✅ I will <strong>be working</strong></li>
+						<li>❌ She will has finished → ✅ She will <strong>have finished</strong></li>
+						<li>❌ He will have be studying → ✅ He will <strong>have been studying</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Adverbs & Adjectives: yet, still, already, for & since Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Adverbs & Adjectives:<br>yet, still,
+						already, for & since</h2>
+				</div>
+				<div class="card-back bg-pink-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Adverbs & Adjectives: yet, still, already, for & since</h3>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 <em>yet</em></h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Used in questions & negatives only</li>
+						<li>Placed at the end of the sentence</li>
+						<li><em>Have you finished your homework <strong>yet</strong>?</em></li>
+						<li><em>I haven’t seen it <strong>yet</strong>.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 <em>already</em></h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Used in affirmative sentences and some questions</li>
+						<li>Goes between the auxiliary and the past participle</li>
+						<li><em>She has <strong>already</strong> eaten lunch.</em></li>
+						<li><em>Have you <strong>already</strong> been there?</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 <em>still</em></h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Used in affirmatives and negatives to show something continues</li>
+						<li>Goes before the main verb</li>
+						<li><em>He <strong>still</strong> lives with his parents.</em></li>
+						<li><em>She <strong>still</strong> hasn’t replied.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 <em>for</em> & <em>since</em></h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Used with Present Perfect or Past Perfect</li>
+						<li><strong>for</strong> + period of time → <em>I’ve lived here for 10 years.</em></li>
+						<li><strong>since</strong> + starting point → <em>She’s been here since 2015.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ I already have eaten → ✅ I <strong>have already eaten</strong></li>
+						<li>❌ Have you yet finished? → ✅ <strong>Have you finished yet?</strong></li>
+						<li>❌ I’ve been here since 3 years → ✅ I’ve been here <strong>for</strong> 3 years</li>
+						<li>❌ He still didn’t arrive → ✅ He <strong>still hasn’t</strong> arrived</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Connectors Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Connectors</h2>
+				</div>
+				<div class="card-back bg-yellow-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Connectors (Linking Words)</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> Connectors are words or phrases that join ideas,
+						sentences or clauses. They help create cohesion and coherence.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔸 Addition</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>and, also, too, as well as, in addition, moreover, furthermore</li>
+						<li><em>She sings and dances.</em></li>
+						<li><em>In addition, she plays the guitar.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔸 Contrast</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>but, although, though, however, whereas, nevertheless, on the other hand</li>
+						<li><em>Although it was cold, we went swimming.</em></li>
+						<li><em>She’s friendly, whereas he’s very shy.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔸 Cause & Reason</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>because, since, as, due to, owing to</li>
+						<li><em>They left early because it was raining.</em></li>
+						<li><em>Due to the snow, school was cancelled.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔸 Result & Consequence</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>so, therefore, as a result, consequently, thus</li>
+						<li><em>He was late, so he missed the train.</em></li>
+						<li><em>She worked hard; therefore, she passed.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔸 Purpose</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>to, in order to, so that, for the purpose of</li>
+						<li><em>He studies to improve his English.</em></li>
+						<li><em>She left early so that she could catch the bus.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔸 Time</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>when, while, after, before, until, as soon as, since</li>
+						<li><em>Call me when you arrive.</em></li>
+						<li><em>She has worked here since 2010.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ Because she was tired, so she went to bed → ✅ Because she was tired, she went to bed.</li>
+						<li>❌ He worked hard, although he failed → ✅ He worked hard, <strong>but</strong> he failed.
+						</li>
+						<li>❌ Since 3 years → ✅ For 3 years (use <strong>since</strong> + point in time)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Comparatives & Superlatives Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Comparatives & Superlatives</h2>
+				</div>
+				<div class="card-back bg-blue-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Comparatives & Superlatives</h3>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Comparatives</h4>
+					<p class="mb-1"><strong>Use:</strong> Compare two things → <em>Tom is taller than Jack.</em></p>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Short adjectives (1 syllable):</strong> +er → <em>fast → faster</em></li>
+						<li><strong>Adjectives ending in -y:</strong> y → ier → <em>happy → happier</em></li>
+						<li><strong>Long adjectives (2+ syllables):</strong> more + adj → <em>more expensive</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Superlatives</h4>
+					<p class="mb-1"><strong>Use:</strong> Highlight the highest/lowest degree among 3+ → <em>She is the
+							fastest runner.</em></p>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Short adjectives:</strong> the + adj + est → <em>small → the smallest</em></li>
+						<li><strong>Ending in -y:</strong> y → iest → <em>happy → the happiest</em></li>
+						<li><strong>Long adjectives:</strong> the most + adj → <em>the most beautiful</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🧠 Irregular adjectives:</h4>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead>
+							<tr class="bg-gray-200">
+								<th class="p-1 border">Adjective</th>
+								<th class="p-1 border">Comparative</th>
+								<th class="p-1 border">Superlative</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">good</td>
+								<td class="p-1 border">better</td>
+								<td class="p-1 border">the best</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">bad</td>
+								<td class="p-1 border">worse</td>
+								<td class="p-1 border">the worst</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">far</td>
+								<td class="p-1 border">farther/further</td>
+								<td class="p-1 border">the farthest/furthest</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h4 class="text-sm font-semibold mb-1">📝 Notes:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Use <strong>than</strong> after comparatives → <em>smarter than me</em></li>
+						<li>Use <strong>the</strong> before superlatives → <em>the most interesting</em></li>
+						<li>For equality: <em>as + adj + as</em> → <em>He is as tall as his brother.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ more tall → ✅ <strong>taller</strong></li>
+						<li>❌ the most fastest → ✅ <strong>the fastest</strong></li>
+						<li>❌ better than her is → ✅ <strong>better than her</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Prepositions Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Prepositions</h2>
+				</div>
+				<div class="card-back bg-violet-100 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Prepositions</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> Prepositions are words used before nouns or pronouns to
+						show relation in time, place, direction, cause, manner, etc.</p>
+
+					<h4 class="text-sm font-semibold mb-1">📍 Place</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>in:</strong> inside an enclosed space → <em>in the room</em></li>
+						<li><strong>on:</strong> on a surface → <em>on the table</em></li>
+						<li><strong>at:</strong> specific point → <em>at the station</em></li>
+						<li><strong>under, above, next to, between, behind</strong></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⏰ Time</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>in:</strong> months, years, centuries → <em>in July, in 2020</em></li>
+						<li><strong>on:</strong> specific days/dates → <em>on Monday, on May 5th</em></li>
+						<li><strong>at:</strong> specific times → <em>at 3 p.m., at night</em></li>
+						<li>Other: before, after, since, for, during, until</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🏃 Movement/Direction</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>to:</strong> direction → <em>go to school</em></li>
+						<li><strong>into:</strong> entering → <em>walk into the room</em></li>
+						<li><strong>onto:</strong> movement to a surface → <em>jump onto the bed</em></li>
+						<li><strong>out of, off, across, along, through</strong></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🎯 Other Common Prepositions</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>about, by, with, without, for, from, of</li>
+						<li><em>This book is about history. / A gift for you.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ at Monday → ✅ <strong>on</strong> Monday</li>
+						<li>❌ in 5 p.m. → ✅ <strong>at</strong> 5 p.m.</li>
+						<li>❌ go in school → ✅ go <strong>to</strong> school</li>
+						<li>❌ married with him → ✅ married <strong>to</strong> him</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Phrasal Verbs Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800">Phrasal Verbs</h2>
+				</div>
+				<div class="card-back bg-lime-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Phrasal Verbs</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> A phrasal verb is a verb combined with a preposition or
+						adverb (or both), forming a meaning different from the original verb.</p>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Structure:</h4>
+					<p class="mb-2">Verb + particle (preposition or adverb)<br><em>e.g. give up, look after, run
+							into</em></p>
+
+					<h4 class="text-sm font-semibold mb-1">📚 Types:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Transitive:</strong> need an object → <em>She put off the meeting.</em></li>
+						<li><strong>Intransitive:</strong> no object → <em>He woke up late.</em></li>
+						<li><strong>Separable:</strong> object can go between → <em>Turn off the light / Turn the light
+								off.</em></li>
+						<li><strong>Inseparable:</strong> object must go after → <em>Look after the baby.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⭐ Common Phrasal Verbs:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>get up:</strong> rise from bed</li>
+						<li><strong>give up:</strong> stop trying</li>
+						<li><strong>look after:</strong> take care of</li>
+						<li><strong>run into:</strong> meet by chance</li>
+						<li><strong>turn on/off:</strong> start/stop a device</li>
+						<li><strong>find out:</strong> discover</li>
+						<li><strong>put off:</strong> postpone</li>
+						<li><strong>break down:</strong> stop working (machine)</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📍 Position of object:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Separable: <em>She turned off the radio.</em> / <em>She turned the radio off.</em></li>
+						<li>Inseparable: <em>He looks after his brother.</em> ❌ Not: *He looks his brother after.</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ He gave the homework up → ✅ He <strong>gave up</strong> the homework</li>
+						<li>❌ I look my dog after → ✅ I <strong>look after</strong> my dog</li>
+						<li>❌ She turned off it → ✅ She <strong>turned it off</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Conditionals Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Conditionals<br>Zero, First, Second & Third
+					</h2>
+				</div>
+				<div class="card-back bg-rose-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Conditionals: Zero, First, Second & Third</h3>
+
+					<p class="mb-2"><strong>Structure:</strong> if-clause + main clause (condition + result)</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Zero Conditional</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Form:</strong> If + present simple, present simple</li>
+						<li><strong>Use:</strong> general truths, scientific facts</li>
+						<li><em>If you heat water, it boils.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 First Conditional</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Form:</strong> If + present simple, will + base verb</li>
+						<li><strong>Use:</strong> real, likely future situations</li>
+						<li><em>If it rains, we’ll stay inside.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Second Conditional</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Form:</strong> If + past simple, would + base verb</li>
+						<li><strong>Use:</strong> imaginary/unreal situations in present or future</li>
+						<li><em>If I had a car, I would drive to work.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Third Conditional</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Form:</strong> If + past perfect, would have + past participle</li>
+						<li><strong>Use:</strong> unreal past situations, regrets</li>
+						<li><em>If she had studied, she would have passed.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📍 Notes:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>“If” can sometimes be replaced with “when” in Zero Conditional</li>
+						<li>You can reverse clause order → <em>We’ll stay inside if it rains.</em></li>
+						<li>Use “were” instead of “was” in Second Conditional → <em>If I were you…</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ If I will see her, I tell her → ✅ If I <strong>see</strong> her, I’ll tell her</li>
+						<li>❌ If I would be rich → ✅ If I <strong>were</strong> rich</li>
+						<li>❌ If I studied, I would have passed → ✅ If I <strong>had studied</strong>, I would have
+							passed</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Mixed Conditionals Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Mixed Conditionals</h2>
+				</div>
+				<div class="card-back bg-indigo-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Mixed Conditionals</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> Mixed conditionals combine two different time
+						references (past ↔ present/future). They are used when the condition and result refer to
+						different times.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Type 1: Past condition → present result</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Form:</strong> If + past perfect, would + base verb</li>
+						<li><strong>Use:</strong> to show how a past action affects the present</li>
+						<li><em>If I had studied medicine, I would be a doctor now.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Type 2: Present condition → past result</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Form:</strong> If + past simple, would have + past participle</li>
+						<li><strong>Use:</strong> to imagine a present situation affecting a past outcome</li>
+						<li><em>If I were taller, I would have joined the basketball team.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📝 Examples:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><em>If she had listened to me, she wouldn’t be in trouble now.</em></li>
+						<li><em>If we weren’t so tired, we would have gone out last night.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📍 Notes:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Only the condition or the result shifts in time, not both</li>
+						<li>Very useful to express <strong>regret or hypothetical analysis</strong></li>
+						<li>Used frequently in real-world conversations</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ If I had more time, I would have studied → ✅ This is NOT mixed, it's incorrect mix</li>
+						<li>❌ If I was rich, I would have been happy → ✅ If I <strong>were</strong> rich, I would have
+							been happy</li>
+						<li>❌ If I had met her, I will be happy → ✅ If I had met her, I <strong>would be</strong> happy
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Verbs: Obligation & Ability Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Modal Verbs<br>Obligation & Ability</h2>
+				</div>
+				<div class="card-back bg-cyan-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Modal Verbs: Obligation & Ability</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> Modal verbs are auxiliary verbs that express necessity,
+						possibility, permission, or ability. They are followed by the base form of the verb (without
+						“to”).</p>
+
+					<h4 class="text-sm font-semibold mb-1">🟩 Obligation</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>must:</strong> strong obligation (speaker’s opinion) → <em>You must wear a
+								seatbelt.</em></li>
+						<li><strong>have to:</strong> external rule/law → <em>Students have to wear uniforms.</em></li>
+						<li><strong>need to:</strong> necessity (less strong than must) → <em>You need to drink more
+								water.</em></li>
+						<li><strong>should / ought to:</strong> advice → <em>You should exercise more.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📉 Lack of Obligation</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>don’t have to:</strong> no obligation → <em>You don’t have to come if you’re
+								busy.</em></li>
+						<li><strong>needn’t:</strong> not necessary → <em>You needn’t worry.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⛔ Prohibition</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>mustn’t:</strong> not allowed → <em>You mustn’t smoke here.</em></li>
+						<li><strong>can’t:</strong> forbidden by rule or logic → <em>You can’t drive without a
+								license.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🟦 Ability</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>can:</strong> present/future ability → <em>She can swim.</em></li>
+						<li><strong>could:</strong> past general ability → <em>I could read at age 5.</em></li>
+						<li><strong>be able to:</strong> all tenses → <em>He will be able to help.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🕒 Past Modal Forms</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>had to:</strong> past obligation → <em>We had to leave early.</em></li>
+						<li><strong>could:</strong> general ability in the past</li>
+						<li><strong>was/were able to:</strong> specific past success → <em>I was able to fix it.</em>
+						</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ He musts study → ✅ He <strong>must</strong> study</li>
+						<li>❌ She can to swim → ✅ She <strong>can swim</strong></li>
+						<li>❌ I don’t must go → ✅ I <strong>mustn’t</strong> go / I <strong>don’t have to</strong> go
+							(⚠️ different meanings)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Reported Speech Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Reported Speech<br>Direct & Indirect Style
+					</h2>
+				</div>
+				<div class="card-back bg-orange-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Reported Speech: Direct & Indirect Style</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> Reported (Indirect) Speech is used to express what
+						someone said without quoting their exact words.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🗣️ Direct vs Indirect:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Direct:</strong> “I’m tired,” she said.</li>
+						<li><strong>Indirect:</strong> She said (that) she was tired.</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔄 Changes in Tense:</h4>
+					<p class="mb-2 italic text-xs">(Only if reporting verb is in past)</p>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead class="bg-gray-200">
+							<tr>
+								<th class="p-1 border">Direct</th>
+								<th class="p-1 border">Indirect</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">Present Simple</td>
+								<td class="p-1 border">Past Simple</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">Present Continuous</td>
+								<td class="p-1 border">Past Continuous</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">Past Simple</td>
+								<td class="p-1 border">Past Perfect</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">Present Perfect</td>
+								<td class="p-1 border">Past Perfect</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">Will</td>
+								<td class="p-1 border">Would</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">Can</td>
+								<td class="p-1 border">Could</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h4 class="text-sm font-semibold mb-1">📍 Other Changes:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Pronouns:</strong> “I” → he/she</li>
+						<li><strong>Time expressions:</strong> today → that day, now → then, tomorrow → the next day
+						</li>
+						<li><strong>Place:</strong> here → there</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔧 Reporting Verbs:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>say, tell, ask, explain, add, promise, warn</li>
+						<li><em>She told me (that) she was tired.</em></li>
+						<li><em>He asked if I had seen the film.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">✅ No tense change when:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Reporting verb is in the present</li>
+						<li>The statement is still true</li>
+						<li><em>She says she’s tired.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ He said me → ✅ He <strong>told me</strong> / He <strong>said (that)</strong></li>
+						<li>❌ She said that she is happy → ✅ She said that she <strong>was</strong> happy</li>
+						<li>❌ He told that he went → ✅ He <strong>said that</strong> / He <strong>told me that</strong>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Relative Clauses Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Relative Clauses<br>Defining & Non-defining
+					</h2>
+				</div>
+				<div class="card-back bg-fuchsia-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Relative Clauses: Defining & Non-defining</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> Relative clauses give extra information about a noun
+						using a relative pronoun (who, which, that, etc.).</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Defining Relative Clauses</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Essential to the meaning of the sentence</li>
+						<li><strong>No commas</strong></li>
+						<li><em>The woman <strong>who lives next door</strong> is a doctor.</em></li>
+						<li>Relative pronouns: who, which, that, where, whose</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Non-defining Relative Clauses</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Give extra (non-essential) information</li>
+						<li><strong>Always use commas</strong></li>
+						<li><strong>“That” is not allowed</strong></li>
+						<li><em>My brother, <strong>who lives in Madrid</strong>, is visiting me.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Relative Pronouns:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>who:</strong> for people → <em>The man who called you</em></li>
+						<li><strong>which:</strong> for things/animals → <em>The book which I bought</em></li>
+						<li><strong>that:</strong> for people/things (only in defining clauses)</li>
+						<li><strong>whose:</strong> possession → <em>The girl whose phone was stolen</em></li>
+						<li><strong>where:</strong> for places → <em>The town where I grew up</em></li>
+						<li><strong>when:</strong> for time → <em>The year when we met</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📍 Omitting the pronoun:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Possible in defining clauses if the pronoun is object → <em>The film (that) we saw was
+								great.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ My friend which lives in London → ✅ My friend <strong>who</strong> lives in London</li>
+						<li>❌ The car, that I bought → ✅ The car, <strong>which</strong> I bought</li>
+						<li>❌ The book that I read, was amazing → ✅ <strong>No comma</strong> before “that”</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Passive Voice Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Passive Voice<br>Active & Passive</h2>
+				</div>
+				<div class="card-back bg-yellow-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Passive Voice: Active & Passive</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> The passive voice is used when the focus is on the
+						action or the receiver of the action, rather than the doer.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔁 Form:</h4>
+					<p class="mb-2">Passive = <strong>be</strong> (in the correct tense) + <strong>past
+							participle</strong> (V3)</p>
+
+					<h4 class="text-sm font-semibold mb-1">🕒 Tense Transformation:</h4>
+					<table class="w-full text-sm border border-gray-300 mb-4">
+						<thead class="bg-gray-200">
+							<tr>
+								<th class="p-1 border">Active</th>
+								<th class="p-1 border">Passive</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="p-1 border">He writes a letter</td>
+								<td class="p-1 border">A letter is written (by him)</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">He is writing a letter</td>
+								<td class="p-1 border">A letter is being written</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">He wrote a letter</td>
+								<td class="p-1 border">A letter was written</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">He has written a letter</td>
+								<td class="p-1 border">A letter has been written</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">He will write a letter</td>
+								<td class="p-1 border">A letter will be written</td>
+							</tr>
+							<tr>
+								<td class="p-1 border">He had written a letter</td>
+								<td class="p-1 border">A letter had been written</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<h4 class="text-sm font-semibold mb-1">👤 Agent (“by...”):</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Use “by” to mention the doer: <em>The cake was made <strong>by Mary</strong>.</em></li>
+						<li>Often omitted if not important or unknown: <em>The window was broken.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Common Uses:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>When the doer is unknown or irrelevant</li>
+						<li>In formal or scientific writing → <em>The experiment was conducted...</em></li>
+						<li>To sound more objective or impersonal</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ The book wrote by her → ✅ The book <strong>was written</strong> by her</li>
+						<li>❌ Is cleaned the room → ✅ The room <strong>is cleaned</strong></li>
+						<li>❌ The door is open by him → ✅ The door <strong>was opened</strong> by him</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Intensifiers: So, Such, Too, Enough Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Intensifiers<br>So, Such, Too, Enough</h2>
+				</div>
+				<div class="card-back bg-emerald-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Intensifiers: So, Such, Too, Enough</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> Intensifiers are words that make adjectives, adverbs,
+						or nouns stronger or more emphatic.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 So</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Structure:</strong> so + adjective/adverb → <em>The book is so interesting.</em>
+						</li>
+						<li>Use for emphasis</li>
+						<li><strong>so...that:</strong> for result → <em>She was so tired that she fell asleep.</em>
+						</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Such</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Structure:</strong> such + (adjective) + noun → <em>It was such a nice day.</em>
+						</li>
+						<li>Use before nouns (with or without adjective)</li>
+						<li><strong>such...that:</strong> → <em>It was such a bad film that we left early.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Too</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Structure:</strong> too + adjective/adverb → <em>It’s too cold to go out.</em></li>
+						<li>Negative meaning: more than necessary or desirable</li>
+						<li><strong>too...to:</strong> → <em>She’s too young to drive.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Enough</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Structure:</strong> adjective/adverb + enough OR enough + noun</li>
+						<li><em>She isn’t tall enough to reach. / We have enough money.</em></li>
+						<li>Means "sufficient"</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚖️ Comparisons:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>so</strong> → intensifies adjectives/adverbs</li>
+						<li><strong>such</strong> → intensifies noun phrases</li>
+						<li><strong>too</strong> → implies a problem</li>
+						<li><strong>enough</strong> → indicates sufficiency</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ It was so good film → ✅ It was <strong>such</strong> a good film</li>
+						<li>❌ She is too much tired → ✅ She is <strong>too tired</strong></li>
+						<li>❌ He isn’t enough strong → ✅ He isn’t <strong>strong enough</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Question Tags Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Question Tags</h2>
+				</div>
+				<div class="card-back bg-sky-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Question Tags</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> A question tag is a short question added at the end of
+						a statement to confirm information or ask for agreement.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔁 Structure:</h4>
+					<p class="mb-2">Statement + <strong>auxiliary/modal verb</strong> + subject pronoun +
+						<strong>?</strong>
+					</p>
+					<ul class="list-disc list-inside mb-2">
+						<li>Positive statement → negative tag → <em>You're coming, aren't you?</em></li>
+						<li>Negative statement → positive tag → <em>He isn't here, is he?</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Rules:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>Use the same auxiliary/modal verb as in the sentence</li>
+						<li>If there is no auxiliary, use <strong>do/does/did</strong></li>
+						<li>Use pronouns, not nouns, in the tag → <em>Anna is nice, isn't <strong>she</strong>?</em>
+						</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🎧 Intonation:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>🔼 Rising → genuine question (uncertain)</li>
+						<li>🔽 Falling → confirmation (expecting agreement)</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔧 Examples:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>She works hard, <strong>doesn’t she</strong>?</li>
+						<li>They didn’t go, <strong>did they</strong>?</li>
+						<li>You can drive, <strong>can’t you</strong>?</li>
+						<li>Let’s go, <strong>shall we</strong>?</li>
+						<li>I’m late, <strong>aren’t I</strong>? ✅ (⚠️ Exception!)</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ She’s nice, is she? → ✅ She’s nice, <strong>isn’t she</strong>?</li>
+						<li>❌ He don’t like it, doesn’t he? → ✅ He <strong>doesn’t</strong> like it, <strong>does
+								he</strong>?</li>
+						<li>❌ I’m late, am I not? → ✅ I’m late, <strong>aren’t I</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- I Wish / If Only Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">I Wish / If Only</h2>
+				</div>
+				<div class="card-back bg-rose-300 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">I Wish / If Only</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> “I wish” and “If only” express regret, desire for
+						change, or complaints about a situation. They are followed by a verb tense that reflects the
+						opposite of the reality.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 1. Wishes about the present (unreal situations)</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Structure:</strong> I wish / If only + past simple</li>
+						<li><em>I wish I <strong>had</strong> more money. / If only she <strong>knew</strong> the
+								answer.</em></li>
+						<li><strong>Use:</strong> things we would like to be different now</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 2. Wishes about the past (regrets)</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Structure:</strong> I wish / If only + past perfect</li>
+						<li><em>I wish I <strong>had studied</strong> more. / If only we <strong>hadn’t missed</strong>
+								the bus.</em></li>
+						<li><strong>Use:</strong> regrets about things that already happened</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 3. Wishes about the future (unlikely desires)</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Structure:</strong> I wish / If only + would + verb</li>
+						<li><em>I wish it <strong>would stop</strong> raining. / If only they <strong>would
+									listen</strong>.</em></li>
+						<li><strong>Use:</strong> to express annoyance or desire for a change in someone’s behavior</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📍 Notes:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>If only</strong> is more emphatic than “I wish”</li>
+						<li><strong>“were”</strong> is preferred over “was” in formal English → <em>I wish I
+								<strong>were</strong> taller.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ I wish I have a car → ✅ I wish I <strong>had</strong> a car</li>
+						<li>❌ If only he comes → ✅ If only he <strong>would come</strong></li>
+						<li>❌ I wish I would know → ✅ I wish I <strong>knew</strong></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Prepositional Verbs Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Prepositional Verbs</h2>
+				</div>
+				<div class="card-back bg-purple-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Prepositional Verbs</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> A prepositional verb is a verb that is followed by a
+						specific preposition before its object.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🧩 Structure:</h4>
+					<p class="mb-2"><strong>Verb + preposition + object</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li><em>She <strong>believes in</strong> hard work.</em></li>
+						<li><em>He <strong>apologized for</strong> the mistake.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Common Prepositional Verbs:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>believe in</strong> → I believe in you.</li>
+						<li><strong>depend on</strong> → It depends on the weather.</li>
+						<li><strong>agree with</strong> → I agree with your point.</li>
+						<li><strong>apologize for</strong> → She apologized for being late.</li>
+						<li><strong>belong to</strong> → That car belongs to my uncle.</li>
+						<li><strong>focus on</strong> → Let’s focus on the task.</li>
+						<li><strong>talk about</strong> → We talked about the problem.</li>
+						<li><strong>laugh at</strong> → Don’t laugh at others.</li>
+						<li><strong>listen to</strong> → I like listening to music.</li>
+						<li><strong>wait for</strong> → I'm waiting for the bus.</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Important Notes:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>The preposition is necessary — removing it changes the meaning or makes it incorrect.</li>
+						<li>The preposition never separates from the verb.</li>
+						<li>It is not the same as a phrasal verb (which can change the meaning entirely).</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ She listened music → ✅ She <strong>listened to</strong> music</li>
+						<li>❌ I depend him → ✅ I <strong>depend on</strong> him</li>
+						<li>❌ We talked the plan → ✅ We <strong>talked about</strong> the plan</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- Prepositional Phrases Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Prepositional Phrases</h2>
+				</div>
+				<div class="card-back bg-lime-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Prepositional Phrases</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> A prepositional phrase is a group of words starting
+						with a preposition and ending with a noun or pronoun (the object of the preposition).</p>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Structure:</h4>
+					<p class="mb-2"><strong>Preposition + noun/pronoun (object)</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li><em>in the morning</em></li>
+						<li><em>at the station</em></li>
+						<li><em>under the bed</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🔹 Types of Prepositional Phrases:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Time:</strong> at night, in 2005, during lunch</li>
+						<li><strong>Place:</strong> under the table, at school, near the park</li>
+						<li><strong>Cause, purpose or reason:</strong> because of the rain, due to stress</li>
+						<li><strong>Manner:</strong> with enthusiasm, in a hurry</li>
+						<li><strong>Instrument:</strong> by hand, with a key</li>
+						<li><strong>Comparison:</strong> in contrast to, similar to</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📖 Examples in Context:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>He arrived <strong>at the airport</strong>.</li>
+						<li>She sat <strong>on the bench</strong>.</li>
+						<li>We stayed indoors <strong>because of the storm</strong>.</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ I arrived to the station → ✅ I <strong>arrived at</strong> the station</li>
+						<li>❌ She was angry to him → ✅ She was angry <strong>with</strong> him</li>
+						<li>❌ We discussed about the topic → ✅ We <strong>discussed</strong> the topic</li>
+					</ul>
+
+					<p class="mt-2 text-xs italic text-gray-700">
+						✅ Some verbs include the preposition as part of their structure. Always learn prepositions with
+						their verbs or phrases.
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- Verb Phrases Card -->
+		<div class="card w-full relative" onclick="flipCard(this)">
+			<div class="card-inner w-full">
+				<div class="card-front bg-white shadow-lg flex items-center justify-center text-center px-4">
+					<h2 class="text-xl font-bold text-gray-800 text-center">Verb Phrases</h2>
+				</div>
+				<div class="card-back bg-cyan-200 shadow-lg text-gray-800 text-sm overflow-y-auto p-4">
+					<h3 class="text-lg font-semibold mb-2">Verb Phrases</h3>
+
+					<p class="mb-2"><strong>Definition:</strong> A verb phrase is a group of words made up of a main
+						verb and one or more auxiliary (helping) verbs.</p>
+
+					<h4 class="text-sm font-semibold mb-1">🔧 Structure:</h4>
+					<p class="mb-2"><strong>Auxiliary/modal verb(s) + main verb</strong></p>
+					<ul class="list-disc list-inside mb-2">
+						<li><em>She <strong>is studying</strong> for the exam.</em></li>
+						<li><em>We <strong>have been waiting</strong> for hours.</em></li>
+						<li><em>I <strong>can speak</strong> English fluently.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">📌 Types of Verb Phrases:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li><strong>Simple:</strong> just the main verb → <em>They <strong>play</strong> tennis.</em>
+						</li>
+						<li><strong>Progressive:</strong> be + verb-ing → <em>She <strong>is running</strong>.</em></li>
+						<li><strong>Perfect:</strong> have + past participle → <em>We <strong>have eaten</strong>.</em>
+						</li>
+						<li><strong>Passive:</strong> be + past participle → <em>The book <strong>was
+									written</strong>.</em></li>
+						<li><strong>Modal:</strong> modal + base verb → <em>He <strong>might come</strong>.</em></li>
+						<li><strong>Combined:</strong> modal + have + been + verb-ing → <em>She <strong>may have been
+									working</strong>.</em></li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">🧠 Use & Meaning:</h4>
+					<ul class="list-disc list-inside mb-2">
+						<li>To indicate <strong>tense</strong>, <strong>aspect</strong>, <strong>voice</strong>,
+							<strong>modality</strong>
+						</li>
+						<li>To build more complex meanings (possibility, obligation, continuity, etc.)</li>
+					</ul>
+
+					<h4 class="text-sm font-semibold mb-1">⚠️ Common mistakes:</h4>
+					<ul class="list-disc list-inside">
+						<li>❌ She can sings → ✅ She <strong>can sing</strong></li>
+						<li>❌ We have went → ✅ We <strong>have gone</strong></li>
+						<li>❌ He is play → ✅ He <strong>is playing</strong></li>
+						<li>❌ They was watching → ✅ They <strong>were watching</strong></li>
+					</ul>
+
+					<p class="mt-2 text-xs italic text-gray-700">
+						💡 Tip: Always learn verb phrases in context and pay attention to auxiliary combinations.
+					</p>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</div>
+
+	<script>
+		function flipCard(card) {
+			card.classList.toggle('flipped');
+		}
+	</script>
+</body>
+
+</html>

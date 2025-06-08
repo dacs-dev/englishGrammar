@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Present Continuous Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Test – Present Continuous</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      { text: "She _____ a book right now.", options: ["is reading", "reads", "read", "reading"], answer: "is reading" },
+      { text: "They _____ dinner at the moment.", options: ["are having", "have", "has", "having"], answer: "are having" },
+      { text: "I _____ to the teacher.", options: ["am listening", "listen", "listens", "listening"], answer: "am listening" },
+      { text: "We _____ TV now.", options: ["are watching", "watch", "watched", "watching"], answer: "are watching" },
+      { text: "The children _____ in the garden.", options: ["are playing", "play", "plays", "played"], answer: "are playing" },
+      { text: "He _____ a shower.", options: ["is taking", "takes", "took", "taking"], answer: "is taking" },
+      { text: "My parents _____ to music.", options: ["are listening", "listen", "listens", "listening"], answer: "are listening" },
+      { text: "You _____ too fast!", options: ["are driving", "drive", "drives", "driving"], answer: "are driving" },
+      { text: "She _____ the dishes.", options: ["is washing", "washes", "wash", "washing"], answer: "is washing" },
+      { text: "I _____ to the gym today.", options: ["am going", "go", "goes", "going"], answer: "am going" },
+      { text: "We _____ to the radio now.", options: ["are listening", "listen", "listens", "listening"], answer: "are listening" },
+      { text: "What _____ you doing?", options: ["are", "is", "do", "does"], answer: "are" },
+      { text: "_____ she working today?", options: ["Is", "Does", "Do", "Are"], answer: "Is" },
+      { text: "They _____ for the bus.", options: ["are waiting", "wait", "waits", "waiting"], answer: "are waiting" },
+      { text: "He _____ his homework.", options: ["is doing", "do", "does", "doing"], answer: "is doing" },
+      { text: "The cat _____ on the sofa.", options: ["is sleeping", "sleeps", "sleep", "sleeping"], answer: "is sleeping" },
+      { text: "We _____ English right now.", options: ["are speaking", "speak", "speaks", "speaking"], answer: "are speaking" },
+      { text: "You _____ a beautiful dress today.", options: ["are wearing", "wear", "wears", "wearing"], answer: "are wearing" },
+      { text: "She _____ a letter.", options: ["is writing", "writes", "write", "writing"], answer: "is writing" },
+      { text: "The phone _____.", options: ["is ringing", "rings", "ring", "ringing"], answer: "is ringing" },
+      { text: "Why _____ you crying?", options: ["are", "do", "does", "is"], answer: "are" },
+      { text: "My brother _____ a cake.", options: ["is baking", "bakes", "bake", "baking"], answer: "is baking" },
+      { text: "It _____ outside.", options: ["is raining", "rains", "rain", "raining"], answer: "is raining" },
+      { text: "He _____ in the kitchen.", options: ["is cooking", "cooks", "cook", "cooking"], answer: "is cooking" },
+      { text: "We _____ a new project.", options: ["are starting", "start", "starts", "starting"], answer: "are starting" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>

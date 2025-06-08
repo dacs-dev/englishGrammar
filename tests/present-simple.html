@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Present Simple Test</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .correct { background-color: #d1fae5; }
+    .incorrect { background-color: #fee2e2; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold text-center text-indigo-700 mb-6">Test – Present Simple</h1>
+    <div id="questions-container" class="space-y-6"></div>
+  </div>
+
+  <script>
+    const questions = [
+      { text: "She _____ to school by bus.", options: ["goes", "go", "gone", "going"], answer: "goes" },
+      { text: "They _____ lunch at 1 p.m.", options: ["eat", "eats", "eating", "ate"], answer: "eat" },
+      { text: "He _____ like broccoli.", options: ["doesn't", "don't", "isn't", "wasn't"], answer: "doesn't" },
+      { text: "_____ they play football on Sundays?", options: ["Do", "Does", "Are", "Is"], answer: "Do" },
+      { text: "My cat _____ under the table.", options: ["sleeps", "sleep", "sleeping", "slept"], answer: "sleeps" },
+      { text: "We _____ work on Saturdays.", options: ["don't", "doesn't", "aren't", "didn't"], answer: "don't" },
+      { text: "What time _____ your brother get up?", options: ["does", "do", "is", "has"], answer: "does" },
+      { text: "He _____ to the gym every day.", options: ["goes", "go", "is going", "gone"], answer: "goes" },
+      { text: "It usually _____ a lot in November.", options: ["rains", "rain", "raining", "rained"], answer: "rains" },
+      { text: "I _____ like loud music.", options: ["don't", "doesn't", "am not", "haven't"], answer: "don't" },
+      { text: "Does your sister _____ coffee?", options: ["like", "likes", "liking", "liked"], answer: "like" },
+      { text: "My parents _____ in a small town.", options: ["live", "lives", "living", "lived"], answer: "live" },
+      { text: "We _____ our homework every day.", options: ["do", "does", "doing", "did"], answer: "do" },
+      { text: "Tom _____ early on weekdays.", options: ["gets up", "get up", "getting up", "got up"], answer: "gets up" },
+      { text: "_____ your friends go to that school?", options: ["Do", "Does", "Did", "Is"], answer: "Do" },
+      { text: "It _____ snow a lot in this area.", options: ["doesn't", "don't", "isn't", "wasn't"], answer: "doesn't" },
+      { text: "The train _____ at 9:00 am.", options: ["leaves", "leave", "leaving", "left"], answer: "leaves" },
+      { text: "He usually _____ TV after dinner.", options: ["watches", "watch", "watched", "watching"], answer: "watches" },
+      { text: "My friend _____ two brothers.", options: ["has", "have", "having", "had"], answer: "has" },
+      { text: "_____ she play the piano?", options: ["Does", "Do", "Is", "Was"], answer: "Does" },
+      { text: "They _____ like loud music.", options: ["don't", "doesn't", "didn't", "aren't"], answer: "don't" },
+      { text: "The dog always _____ when it hears a noise.", options: ["barks", "bark", "barking", "barked"], answer: "barks" },
+      { text: "_____ your teacher give a lot of homework?", options: ["Does", "Do", "Did", "Is"], answer: "Does" },
+      { text: "She _____ her teeth every morning.", options: ["brushes", "brush", "brushing", "brushed"], answer: "brushes" },
+      { text: "You _____ your lunch at school.", options: ["eat", "eats", "eating", "ate"], answer: "eat" }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    shuffle(questions);
+
+    const container = document.getElementById("questions-container");
+
+    questions.forEach((q, i) => {
+      const wrapper = document.createElement("div");
+      wrapper.classList.add("p-4", "bg-white", "rounded", "shadow");
+
+      const questionText = document.createElement("h3");
+      questionText.classList.add("font-semibold", "mb-2");
+      questionText.textContent = `Question ${i + 1}: ${q.text}`;
+      wrapper.appendChild(questionText);
+
+      const options = document.createElement("div");
+      const shuffledOptions = [...q.options];
+      shuffle(shuffledOptions);
+
+      shuffledOptions.forEach((opt) => {
+        const label = document.createElement("label");
+        label.classList.add("block", "cursor-pointer", "mb-1", "hover:bg-gray-100", "rounded", "px-2", "py-1");
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = `q${i}`;
+        input.value = opt;
+        input.classList.add("mr-2");
+        input.addEventListener("change", () => {
+          const labels = wrapper.querySelectorAll("label");
+          labels.forEach(l => l.classList.remove("correct", "incorrect"));
+
+          if (opt === q.answer) {
+            label.classList.add("correct");
+          } else {
+            label.classList.add("incorrect");
+            labels.forEach(l => {
+              const inputEl = l.querySelector("input");
+              if (inputEl.value === q.answer) {
+                l.classList.add("correct");
+              }
+            });
+          }
+        });
+
+        label.appendChild(input);
+        label.append(opt);
+        options.appendChild(label);
+      });
+
+      wrapper.appendChild(options);
+      container.appendChild(wrapper);
+    });
+  </script>
+</body>
+</html>
